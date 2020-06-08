@@ -1,0 +1,20 @@
+<!-- barra izquierda-->
+<div class="botonBarraIzquierda text-center"><i class="fas fa-arrow-circle-right fa-2x mt-1" id="botonBarraIzquierda"></i></div>
+<div class="barraIzquierda">
+    <ul class="nav flex-column">
+        <li class="nav-item nav-link">
+            <a ng-click="loadNews()" href="index.php?pagina=inicio" class="text-decoration-none text-white">Inicio</a>
+        </li>
+        <li class="nav-item nav-link">
+            <a href="index.php?pagina=noticias" class="text-decoration-none text-white">Noticias</a>
+        </li>
+        <li class="nav-item nav-link">
+            <a href="index.php?pagina=contacto" class="text-decoration-none text-white">Contacto</a>
+        </li>
+        <?php if($userSession->checkUserPrivileges()):?>
+            <li class="nav-item nav-link">
+                <a href="index.php?pagina=administrador" class="text-decoration-none text-white">Administrar</a>
+            </li>
+        <?php endif?>
+    </ul>
+</div>

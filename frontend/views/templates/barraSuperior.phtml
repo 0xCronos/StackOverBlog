@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-md mb-5 position-fixed barraSuperior">
+    <div class="container">
+       <a href="index.php" class="navbar-brand">Blog</a>
+        <button type="button" class="navbar-toggler custom-toggler " data-toggle="collapse" data-target="#navbar">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbar">
+           <?php if($userSession->checkSession()):?>
+                <ul class="navbar-nav ml-auto">
+                    <span>Bienvenido, <?php echo $_SESSION['user_fullname']?> </span>
+                    <li class="nav-item nav-link"><a href="index.php?pagina=perfil" class="text-decoration-none text-white">Mi perfil</a></li>
+                    <li class="nav-item nav-link"><a href="../backend/controllers/logout.php" class="text-decoration-none text-white">Cerrar sesión</a></li>
+                </ul>
+            <?php else:?>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav-link"><a href="index.php?pagina=login" class="text-decoration-none text-white">Iniciar sesion</a></li>
+                    <li class="nav-item nav-link"><a href="index.php?pagina=register" class="text-decoration-none text-white">Registrarse</a></li>
+                </ul>
+            <?php endif?>
+        </div>
+   </div>
+</nav>
