@@ -14,7 +14,6 @@ $userSession = new UserSession();
 </head>
 <body ng-app="blog-app">
 
-
     <!-- barras -->
     <?php
     require_once "views/templates/barraAccesibilidad.html";
