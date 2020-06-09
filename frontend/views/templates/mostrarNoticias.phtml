@@ -1,12 +1,13 @@
 <section>
-    <header ng-hide="targetNew == 1" class="bg-dark text-white text-center">{{section}}</header>
+    <header ng-hide="targetNew == 1" class="seccionNoticia text-white text-center">{{section}}</header>
     <!-- Noticias -->
-    <article class="bg-secondary p-2 mb-2" ng-repeat="new in news" style="transition: 2s">
+    <article class="noticia p-5 mb-5" ng-repeat="new in news">
+        <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-long-arrow-alt-left fa-lg text-dark"></i></a>
 
-        <a href="index.php?page=inicio" ng-click="loadNews()" ng-hide="targetingNew == false">volver</a>
-        <h2 ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h2>
+        <h1 class="text-center" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
+        <hr class="px-5">
 
-        <form class="clasificacion" action="../backend/controllers/addRating.php">
+        <form class="calificacion" action="../backend/controllers/addRating.php">
             <input type="radio" name="estrellas" value="5">
             <label for="radio1">★</label>
             <input type="radio" name="estrellas" value="4">
@@ -20,24 +21,24 @@
         </form>
 
         <!-- imagen usuario | categoria noticia | fecha creacion -->
-        <span class="ml-2"><img class="rounded-circle mb-1" src="../backend/assets/{{new.user_image}}" width="32px"
+        <span class=""><img class="rounded-circle mb-1" src="../backend/assets/{{new.user_image}}" width="32px"
                 height="32px"> | {{new.category_name}} | {{new.new_timestamp}}
         </span>
-
-        <!-- cuerpo noticia -->
-        <p>{{new.new_body}}</p>
-
+        
         <!-- Imagen noticia (opcional) -->
-        <div class="content text-center mb-1">
-            <img src="../backend/assets/{{new.new_image}}" ng-hide="new.new_image == null" width="250px" height="250px">
+        <div class="content text-center mt-4 mb-5">
+            <img class="img-fluid" src="../backend/assets/{{new.new_image}}" ng-hide="new.new_image == null" width="850em" height="auto">
         </div>
 
-        <!-- Sección de comentarios -->
-        <div class="content mb-1">
+        <!-- cuerpo noticia -->
+        <p class="text-left">{{new.new_body}}</p>
 
-            <h4 class="d-inline">comentarios ({{new.comments.length}})</h4>
+        <!-- Sección de comentarios -->
+        <hr class="px-5">
+        <div class="content mb-1">
             <!-- expande comentarios -->
-            <input class="expandComments" type="button" value="+" onclick="expandComments(this)">
+            
+            <button class="btn expandComments bg-transparent" type="button" onclick="expandComments(this)"><i class="far fa-comment-alt mr-1"></i>Comentar</button>
 
             <div class="content d-inline commentsBox">
 
@@ -50,7 +51,7 @@
 
                 <!-- campo para comentar -->
                 <div class="container mt-3 d-none">
-                    <textarea class="form-control mb-1" id="new_body" rows="3" placeholder="Escribe aqui..."
+                    <textarea class="form-control mb-1" id="new_body" rows="4" placeholder="Escribe aqui..."
                         style="resize: none;"></textarea>
                     <input type="button" value="Comentar">
                 </div>

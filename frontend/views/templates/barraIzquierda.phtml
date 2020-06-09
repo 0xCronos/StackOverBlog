@@ -1,20 +1,43 @@
 <!-- barra izquierda-->
 <div class="botonBarraIzquierda text-center"><i class="fas fa-arrow-circle-right fa-2x mt-1" id="botonBarraIzquierda"></i></div>
 <div class="barraIzquierda">
-    <ul class="nav flex-column">
-        <li class="nav-item nav-link">
-            <a ng-click="loadNews()" href="index.php?pagina=inicio" class="text-decoration-none text-white">Inicio</a>
-        </li>
-        <li class="nav-item nav-link">
-            <a href="index.php?pagina=noticias" class="text-decoration-none text-white">Noticias</a>
-        </li>
-        <li class="nav-item nav-link">
-            <a href="index.php?pagina=contacto" class="text-decoration-none text-white">Contacto</a>
-        </li>
-        <?php if($userSession->checkUserPrivileges()):?>
+    <div class=" ml-1">
+        <ul class="nav flex-column mt-5">
             <li class="nav-item nav-link">
-                <a href="index.php?pagina=administrador" class="text-decoration-none text-white">Administrar</a>
+                <i class="fas fa-home mr-2 text-light"></i><a ng-click="loadNews()" href="index.php?pagina=inicio" class="text-decoration-none text-white">Inicio</a>
             </li>
-        <?php endif?>
-    </ul>
+            <li class="nav-item nav-link">
+                <i class="fab fa-battle-net mr-2 text-light"></i><a href="index.php?pagina=noticias" class="text-decoration-none text-white">Noticias</a>
+            </li>
+            <li class="nav-item nav-link">
+                <i class="fas fa-mobile-alt ml-1 mr-2 text-light"></i><a href="index.php?pagina=contacto" class="text-decoration-none text-white">Contacto</a>
+            </li class="nav-item nav-link">
+            <?php if($userSession->checkUserPrivileges()):?>
+                <!-- Dropdown -->
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">
+                        <i class="fas fa-toolbox ml-1 mr-2 text-light"></i>
+                        <span class="text-white">Administrar</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.php?pagina=administrador&seccion=inicio" class="text-decoration-none text-dark dropdown-item">Panel principal</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.php?pagina=administrador&seccion=crudNoticias" class="text-decoration-none text-dark dropdown-item">Noticias</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.php?pagina=administrador&seccion=crudCategorias" class="text-decoration-none text-dark dropdown-item">Categorias</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.php?pagina=administrador&seccion=crudContactos" class="text-decoration-none text-dark dropdown-item">Contactos</a>
+                    </div>
+                </li>
+            <?php endif?>
+            <div>
+                <li class="nav-item nav-link text-center">
+                    <i class="fas fa-search-plus text-muted" id="mas"></i>
+                    <i class="fas fa-search-minus text-muted" id="menos"></i>
+                    <i class="fas fa-adjust text-muted" id='tiempo'></i>
+                </li>
+            </div>
+        </ul>
+    </div>
 </div>

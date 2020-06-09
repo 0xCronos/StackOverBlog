@@ -1,16 +1,16 @@
-.cabecera{
-	width: 100%;
-	height: 45px;
-	background-color: #e0e1f8;
-	z-index: 3;
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Open+Sans:wght@300&display=swap');
+
+body{
+    /* background-color: #e4f0ed; */
+    background: radial-gradient(circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2%);
+    height: auto;
 }
 
 /******* BARRA HORIZONTAL DE SIGN-IN LOGIN *******/
 .barraSuperior{
-	margin-top: 45px;
-	box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .8); 
-	background-color: #686de0;
-	width: 100%;
+	box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .8);
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(89,195,195,1) 0%, rgba(14,175,181,1) 90% );;
+    width: 100%;
 	z-index: 3;
 	top: 0;
 } 
@@ -26,13 +26,15 @@
 
 /******* BARRA VERTICAL IZQUIERDA *******/
 .barraIzquierda{
-	margin-top: 101px;
-	width: 10%;
+    margin-top: 85px;
+	width: 15%;
 	height: 100vh;
 	position: fixed;
-	background: #f0932b;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% );;
 	z-index: 2;
-	flex: 0 0 10%;
+    flex: 0 0 10%;
+    font-size: 20px;
+    box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .6); 
 }
 
 .botonBarraIzquierda{
@@ -57,11 +59,12 @@
 }
 
 .perfil{
-	background-color: #f0932b;
-	color: #fff;
+	background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% );
+    color: #fff;
+    box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .6); 
 }
 
-form.clasificacion {
+form.calificacion {
   margin: 0 auto;
   display:block;
   direction: rtl;
@@ -75,17 +78,45 @@ form.clasificacion {
     background-color: #FdF;
 }
 
-form.clasificacion label {
+/* calificacion de noticia*/
+form.calificacion label {
   color: grey;
 }
 
-form.clasificacion label:hover,
-form.clasificacion label:hover ~ label {
+form.calificacion label:hover,
+form.calificacion label:hover ~ label {
   color: orange;
 }
 
-form.clasificacion input[type="radio"]:checked ~ label {
+form.calificacion input[name="estrellas"]:checked ~ label {
   color: orange;
+}
+
+input[name="estrellas"] {
+    display: none;
+}
+/* fin calificacion de noticia*/
+
+
+.seccionNoticia{
+    background-image: linear-gradient(to right, #ff4b1f 0%, #ff9068 51%, #ff4b1f 100%);
+    box-shadow: 3px -1px 10px 0px rgba(51,51,51,0.34);
+}
+
+.seccionNoticia:hover{
+    background-position: right center;
+}
+
+.noticia{
+    background-color: #fff;
+    box-shadow: 3px -1px 10px 0px rgba(51,51,51,0.34);
+    font-family: 'Comfortaa', cursive;
+    line-height: 30px;
+    padding: 20px;
+}
+
+.iconoOscuro{
+    color: rgba(0, 0, 0, .5);
 }
 
 @media(max-width:1200px){

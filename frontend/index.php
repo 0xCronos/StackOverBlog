@@ -9,6 +9,7 @@ $userSession = new UserSession();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StackOverBlog</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -16,14 +17,7 @@ $userSession = new UserSession();
 
     <!-- barras -->
     <?php
-    require_once "views/templates/barraAccesibilidad.html";
-
-    //elige entre barra normal y barra de crud
-    if($userSession->checkUserPrivileges() && $_GET['pagina'] == "administrador"){
-        require_once "views/templates/barraCrud.phtml";
-    }else{
-        require_once "views/templates/barraSuperior.phtml";
-    }
+    require_once "views/templates/barraSuperior.phtml";
 
     require_once "views/templates/barraIzquierda.phtml";
 

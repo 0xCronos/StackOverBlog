@@ -13,6 +13,7 @@ class UserSession{
         $_SESSION['user_email'] = $user['user_email'];
         $_SESSION['user_image'] = $user['user_image'];
         $_SESSION['user_description'] = $user['user_description'];
+        $_SESSION['user_image'] = $user['user_image'];
         $_SESSION['user_role'] = $user['role_name'];
     }
 
