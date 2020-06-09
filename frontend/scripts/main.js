@@ -73,32 +73,26 @@ $(document).ready(function(){
             }else{
                 alert("no funciona");
                 $("input[type=password]").val('');
-                $("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
+                //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })
 
-    //AJAX CREAR NOTICIA
-    $("#createNewForm").submit(function(e){
+    //AJAX ENVIAR CONTACTO
+    $(".contactForm").submit(function (e) {
         e.preventDefault();
-        var form = $('#createNewForm')[0];
-        var data = new FormData(form);
         $.ajax({
-            url: '../backend/controllers/addNewCtr.php',
-            method: 'POST',
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            data: data
+            url: '/blog-prod/backend/controllers/addContactCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: $(".contactForm").serialize()
+
         })
-        .done(function(data){
-            console.log(data);
-            if(data == "noticia agregada con exito"){
-                alert("noticia agregada con exito");
-                window.location.reload();
+        .done(function (data) {
+            if(data == "1"){
+                alert("Enviado");
             }else{
-                alert("no funciona");
-                //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
+                alert(data);
             }
         })
     })

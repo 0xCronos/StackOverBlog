@@ -46,7 +46,7 @@ if($userSession->checkUserPrivileges()){
                 }
 
                 if($news->addNew($new_title, $new_body, $fileName, $state_id, $category_id, $author_id)){
-                    echo "noticia agregada con exito";
+                    echo "1";
                 }else{
                     echo "error al crear noticia";
                 }
@@ -64,11 +64,11 @@ if($userSession->checkUserPrivileges()){
 }
 
 function validateInput($title, $body){
-    if(strlen($title) < 4 || strlen($title) > 45){
-        return "Campo titulo no cumple con los requisitos.";
+    if(strlen($title) < 4 || strlen($title) > 120){
+        return "El titulo no cumple con los requisitos";
     }
-    if(strlen($body) < 100 || strlen($body) > 2048){
-        return "Campo cuerpo noticia no cumple con los requisitos";
+    if(strlen($body) < 1 || strlen($body) > 2048){
+        return "El cuerpo noticia no cumple con los requisitos";
     }
     return "";
 }
