@@ -1,9 +1,10 @@
 app.controller('controladorInicio', function($scope, $http){
-    $scope.section = "Ultimas noticias"
+    $scope.section = "";
     $scope.targetingNew = false;
     $scope.news = [];
 
     $scope.loadLastNews = function(amount){
+        $scope.section = "Ultimas noticias";
         $scope.targetingNew = false;
         $http.get("../backend/controllers/getNewsCtr.php?amount="+amount)
         .then(function (response){
@@ -15,6 +16,7 @@ app.controller('controladorInicio', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = "";
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response){
@@ -28,11 +30,12 @@ app.controller('controladorInicio', function($scope, $http){
 });
 
 app.controller('controladorNoticias', function($scope, $http){
-    $scope.section = "Noticias"
+    $scope.section = "";
     $scope.targetingNew = false;
     $scope.news = [];
 
     $scope.loadAllNews = function(){
+        $scope.section = "Noticias";
         $scope.targetingNew = false;
         $http.get("../backend/controllers/getNewsCtr.php")
         .then(function (response) {
@@ -44,7 +47,9 @@ app.controller('controladorNoticias', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = "";
         $scope.targetingNew = true;
+        $scope.section
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response) {
             $scope.news = response.data;

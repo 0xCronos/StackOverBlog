@@ -68,7 +68,7 @@ $(document).ready(function(){
             if(data == "user"){
                 window.location = "blog-prod/";
             }else if(data == "admin"){
-                window.location = "/blog-prod/frontend/index.php?pagina=administrador";
+                window.location = "../frontend/index.php?pagina=administrador";
                 
             }else{
                 alert("no funciona");
