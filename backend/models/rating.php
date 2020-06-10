@@ -1,5 +1,4 @@
 <?php
-
 class Rating extends Database{
 
     //Busca rating por id, retorna null si no existe
@@ -10,7 +9,7 @@ class Rating extends Database{
         $res = $this->connect()->prepare($query);
         $res->execute(['new_id' => $new_id]);
 
-        return ($res->rowCount() != 0) ? $res->fetch(PDO::FETCH_ASSOC)['rating_average'] : null;
+        return ($res->rowCount() > 0) ? $res->fetch(PDO::FETCH_ASSOC) : null;
     }
 
     public function addRatingValue($rating_value, $new_id, $ip_address){
