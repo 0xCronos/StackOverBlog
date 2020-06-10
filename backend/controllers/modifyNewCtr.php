@@ -49,7 +49,6 @@ if($userSession->checkUserPrivileges()){
                     $fileName = null;
                 }
 
-
                 //Modifica noticia (si $fileName = null se mantiene imagen antigua)
                 if($news->modifyNew($new_id, $new_title, $new_body, $fileName, $state_id, $category_id)){
                     echo "1";
