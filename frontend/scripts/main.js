@@ -68,7 +68,7 @@ $(document).ready(function(){
             if(data == "user"){
                 window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
-                window.location = "/blog-prod/frontend/index.php?pagina=administrador";
+                window.location = "index.php?pagina=administrador";
                 
             }else{
                 alert("no funciona");
@@ -78,38 +78,24 @@ $(document).ready(function(){
         })
     })
 
-    //AJAX CREAR NOTICIA
-    $("#createNewForm").submit(function(e){
+   //AJAX ENVIAR CONTACTO
+    $(".contactForm").submit(function (e) {
         e.preventDefault();
-        var form = $('#createNewForm')[0];
-        var data = new FormData(form);
         $.ajax({
-<<<<<<< Updated upstream
-            url: '../backend/controllers/addNewCtr.php',
-            method: 'POST',
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            data: data
-=======
             url: '../backend/controllers/addContactCtr.php',
             type: 'POST',
             dataType: 'text',
             data: $(".contactForm").serialize()
 
->>>>>>> Stashed changes
         })
-        .done(function(data){
-            console.log(data);
-            if(data == "noticia agregada con exito"){
-                alert("noticia agregada con exito");
-                window.location.reload();
+        .done(function (data) {
+            if(data == "1"){
+                alert("Enviado");
             }else{
-                alert("no funciona");
-                //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
+                alert(data);
             }
         })
-    })
+    }) 
 
     //abre o cierra barra lateral izquierda
 	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());

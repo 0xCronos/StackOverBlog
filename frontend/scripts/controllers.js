@@ -203,8 +203,7 @@ app.controller('controladorCrudCategorias', function($scope, $http){
 app.controller('controladorCrudContactos', function($scope, $http){
     $(document).ready(function () {
 
-        $scope.contactos = [
-        ];
+        $scope.contactos = [];
         $http.get("../backend/controllers/getContactsCtr.php")
             .then(function (response) {
                     console.log(response.data);
