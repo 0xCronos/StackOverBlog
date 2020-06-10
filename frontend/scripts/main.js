@@ -23,16 +23,6 @@ function cambiarfondo(){
 	}
 }
 
-function botonBarraIzquierda(){
-	if(barraIzquierdaActiva){
-		$('.barraIzquierda').css("display", "none");
-		barraIzquierdaActiva = false;
-	}else{
-		$('.barraIzquierda').css("display", "inline");
-		barraIzquierdaActiva = true;
-	}
-}
-
 function expandComments(obj){
     var commentsBox = $(obj).next(commentsBox);
     if(commentsBox.children().hasClass("d-none")){
@@ -71,9 +61,8 @@ $(document).ready(function(){
                 window.location = "../frontend/index.php?pagina=administrador";
                 
             }else{
-                alert("no funciona");
                 $("input[type=password]").val('');
-                //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
+                $("#loginResponse").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })
@@ -96,9 +85,6 @@ $(document).ready(function(){
             }
         })
     })
-
-    //abre o cierra barra lateral izquierda
-	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());
 
 	//llama a la etiqueta #mas y va a leer el elemento click
 	$("#mas").click(function(){
