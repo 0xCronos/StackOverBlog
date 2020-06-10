@@ -133,7 +133,6 @@ $(document).ready(function(){
                 window.location = "index.php?pagina=administrador";
 
             }else{
-                alert("no funciona");
                 $("input[type=password]").val('');
                 $("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
             }

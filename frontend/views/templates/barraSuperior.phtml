@@ -1,14 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark position-fixed barraSuperior">
+
     <a class="navbar-brand" href="index.php?pagina=inicio"><img src="img/logo.png" alt="logo" width="auto" height="60px"></a>
+
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navb">
         <ul class="navbar-nav ml-auto mr-5">
             <?php if(!$userSession->checkSession()):?>
-                    <li class="nav-item nav-link"><a class="btn text-decoration-none text-light letraSuperior" href="index.php?pagina=login">Iniciar sesion</a></li>
-                    <li class="nav-item nav-link"><a class="btn text-decoration-none text-light border-light letraSuperior" href="index.php?pagina=register">Registrarse</a></li>
+                    <li class="nav-item"><a class="nav-link btn text-decoration-none text-light letraSuperior " href="index.php?pagina=login">Iniciar sesion</a></li>
+                    <li class="nav-item"><a class="nav-link btn text-decoration-none text-light border-light letraSuperior" href="index.php?pagina=register">Registrarse</a></li>
              <?php endif?>
         </ul>
 
@@ -23,6 +25,5 @@
                 <li class="nav-item nav-link mt-1"><a href="../backend/controllers/logout.php" class="text-decoration-none text-white "><i class="fas fa-sign-out-alt fa-lg"></i></a></li>
             </div>
         <?php endif?>
-
     </div>
 </nav>

@@ -12,19 +12,23 @@
                                 <h3 class="text-center text-dark">Contacto</h3>
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo</label>
-                                    <input type="name" class="form-control" placeholder="Ingresa tu nombre completo" name="contact_fullname">
+                                    <input id="nombreContacto" type="name" class="form-control" placeholder="Ingresa tu nombre completo" name="contact_fullname">
                                 </div>
+                                <div class="error alert alert-danger" role="alert" id="mensajeNombreContacto">LLenar campo nombre</div>
                                 <div class="form-group">
                                     <label for="email">Correo electrónico</label>
-                                    <input type="email" class="form-control" placeholder="Ingresa tu correo" name="contact_email">
+                                    <input id="emailContacto"type="email" class="form-control" placeholder="Ingresa tu correo" name="contact_email">
                                 </div>
+                                <div class="error alert alert-danger" role="alert" id="mensajeCorreoContacto">LLenar campo correo correctamente</div>
                                 <div class="form-group">
                                     <label for="contact_text">Mensaje</label>
-                                    <textarea class="form-control" rows="3" placeholder="Escribe sobre ti..." name="contact_text"></textarea>
+                                    <textarea id="mensajeContacto" class="form-control" rows="3" placeholder="Escribe sobre ti..." name="contact_text"></textarea>
                                 </div>
+                                <div class="error alert alert-danger" role="alert" id="errorMensajeContacto">LLenar campo Mensaje</div>
+
                                 <div class="form-group text-center">
-                                    <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Enviar">
-                                    <span class="text-danger" id="contactResponse"></span>
+                                    <input id="contactForm" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Enviar">
+                                    <span class="text-danger" ></span>
                                 </div>
                             </form>
                         </div>
