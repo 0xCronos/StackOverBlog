@@ -1,5 +1,5 @@
 <?php if (!$userSession->checkSession()) header("location: index.php?pagina=login"); ?>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="modificarPerfil">
     <div class="row">
         <div class="col-lg-2 p-0">
             <?php require_once "views/templates/barraIzquierda.phtml"; ?>
@@ -10,12 +10,18 @@
                     <div id="form-column" class="col-md-6">
                         <div id="form-box" class="bg-light text-dark">
 
-                            <form method="POST" enctype="multipart/form-data">
+                            <form method="POST" class="editar_perfil" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Actualizar Perfil</h3>
+
+                                <div ng-hide="true" class="form-group">
+                                    <label for="id">ID</label>
+                                    <input type="text" class="form-control" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo</label>
-                                    <input id="nombreEditarPerfil" type="name" class="form-control" name="fullname" value="<?php echo $_SESSION['user_fullname']; ?>">
+
+                                    <input id="nombreEditarPerfil" type="name" class="form-control" name="user_fullname" value="<?php echo $_SESSION['user_fullname']; ?>">
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensajeNombreEditarPerfil1">Introduzca un nombre.</div>
 
@@ -29,7 +35,8 @@
 
                                 <div class="form-group">
                                     <label for="password">Contraseña</label>
-                                    <input id="passwordEditarPerfil" type="password" class="form-control" placeholder="********" name="password">
+
+                                    <input id="passwordEditarPerfil" type="password" class="form-control" placeholder="********" name="user_password">
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensajePasswordEditarPerfil1">LLenar campo Contraseña.</div>
                                 <div class="error alert alert-danger" role="alert" id="mensajePasswordEditarPerfil2">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
@@ -37,7 +44,7 @@
 
                                 <div class="form-group">
                                     <label for="image">Foto de perfil</label>
-                                    <input type="file" class="form-control-file " name="image" accept="image/*">
+                                    <input type="file" class="form-control-file " name="user_image" accept="image/*">
                                 </div>
 
                                 <div class="text-center">
@@ -46,7 +53,7 @@
 
                                 <div class="form-group mt-2">
                                     <label for="description">Descripción</label>
-                                    <textarea id="descriptionEditarPerfil" class="form-control" rows="5" name="description"><?php echo $_SESSION['user_description']; ?></textarea>
+                                    <textarea id="descriptionEditarPerfil" class="form-control" rows="5" name="user_description"><?php echo $_SESSION['user_description']; ?></textarea>
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensajeDescriptionEditarPerfil1">LLenar campo Descripción con menos de 2048 caracteres.</div>
 
