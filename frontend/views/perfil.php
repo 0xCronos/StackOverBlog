@@ -13,9 +13,10 @@ if(isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0){
         </div>
         <div class="col-lg-10 contenedorPrincipal">
             <div class="row">
-                <div class="col-lg-4 text-center" style="margin-top: 10%;">
+                <div class="col-lg-4 text-center" style="margin-top: 8%;">
+                    <h2 class="text-center h3 pt-2 mb-3">Foto de perfil</h2>
                     <img class="img-fluid fotoPerfil" src="../backend/assets{{userData.user_image}}" width="400px" height="auto">
-                    <p class="lead">Rol actual: {{userData.role_name}}</p>
+                    <p class="lead">Rol: <b>{{userData.role_name}}</b></p>
                 </div>
                 <div class="col-lg-8">
                     <h2 class="text-center h3 pt-2">{{userData.user_fullname}}</h2>
