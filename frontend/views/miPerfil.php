@@ -16,8 +16,8 @@
                     <p class="lead text-left bordePerfil">
                         <?php echo $_SESSION['user_description']?>
                     </p>
-                    <div class="text-center">
-                        <a class="editarPerfil mt-5 text-decoration-none" href="index.php?pagina=editarPerfil"><i class=" fas fa-user-edit mr-1"></i>Editar mi perfil</a>
+                    <div class="text-center mb-5 ">
+                        <a class="editarPerfil mt-5text-decoration-none" href="index.php?pagina=editarPerfil"><i class=" fas fa-user-edit mr-1"></i>Editar mi perfil</a>
                     </div>
                 </div>
             </div>
