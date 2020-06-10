@@ -8,7 +8,7 @@
                 <?php require_once "views/templates/mostrarNoticias.phtml";?>
             </div>
             <div class="col-lg-3 contenedorPrincipal perfil">
-                <?php require_once "views/templates/perfil.phtml";?>
+                <?php require_once "views/templates/barraDerecha.phtml";?>
             </div>
         </div>
     </div>

@@ -1,16 +1,16 @@
 <?php
 //dependencias
 require_once "../database/db.php";
-require_once "../models/news.php";
+require_once "../models/user.php";
 require_once "../models/utils.php";
 
-$new = new News();
+$user = new User();
 $utils = new Utils();
 
-$data = $new->get5BestRatedNews();
+$data = $user->getOwner();
 if($data){
     $utils->printJSON($data);
 }else{
-    $utils->message("Aviso: No existen Votaciones o Noticias");
+    $utils->message("Aviso: no existe un dueño del blog aun");
 }
 ?>
