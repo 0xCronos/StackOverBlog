@@ -175,7 +175,7 @@ class News extends Database{
         //Se desea cambiar imagen
         if($image){
             $query = "UPDATE news
-                      SET new_title = :title, new_body = :body, new_image = :image, state_id = :state_id, category_id = :category_id
+                      SET new_title = :title, new_body = :body, new_image = :new_image, state_id = :state_id, category_id = :category_id
                       WHERE new_id = :new_id";
             $res = $this->connect()->prepare($query);
 
@@ -183,7 +183,7 @@ class News extends Database{
                 $res->execute([
                     'title' => $title,
                     'body' => $body,
-                    'image' => $image,
+                    'new_image' => $image,
                     'state_id' => $state_id,
                     'category_id' => $category_id,
                     'new_id' => $new_id

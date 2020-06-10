@@ -59,7 +59,7 @@
 
                     <div class="form-group text-center mt-4">
                         <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
-                        <span class="text-danger" id="registerResponse"></span>
+                        <span class="text-danger registerResponse"></span>
                     </div>
                 </form>
             </div>
@@ -110,6 +110,10 @@
                                 <option value="0" selected disabled hidden>Elegir categoría</option>
                                 <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                             </select>
+                        </div>
+
+                        <div class="container">
+                            <p>Categoria actual: {{new.category_name}}</p>
                         </div>
 
                         <!-- estado -->
@@ -182,7 +186,7 @@
                         <!-- BOTON -->
                         <div class="form-group text-center mt-4">
                             <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" ng-click="actualizarNoticia(new.new_id)" value="Modificar">
-                            <span class="text-danger" id="registerResponse"></span>
+                            <span class="text-danger registerResponse"></span>
                         </div>
                     </form>
                 </div>

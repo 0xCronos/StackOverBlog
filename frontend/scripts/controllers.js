@@ -26,11 +26,11 @@ app.controller('controladorInicio', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
-        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response){
             $scope.news = response.data;
+            $scope.section = $scope.news[0].category_name;
         }
         ,function(error){
             console.warn(error);
@@ -105,11 +105,11 @@ app.controller('controladorNoticias', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
-        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response) {
             $scope.news = response.data;
+            $scope.section = $scope.news[0].category_name;
         }
         ,function(error){
             console.warn(error);
@@ -244,6 +244,7 @@ app.controller('controladorCrudNoticias', function($scope, $http){
 
     //AJAX MODIFICAR NOTICIA
     $scope.actualizarNoticia = function(id) {
+        console.log("id= " + id);
         var formEspecifico = ".noticia-" + id;
         console.log(formEspecifico);
         var form = $(formEspecifico)[0];
