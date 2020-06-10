@@ -27,7 +27,7 @@ class Categories extends Database{
         $res = $this->connect()->prepare($query);
         
         try{
-            $res->execute(['category_name' => ucfirst(strtolower($category_name))]);
+            $res->execute(['category_name' => $category_name]);
             return true;
         }catch(PDOException $e){
             return false;
@@ -51,7 +51,7 @@ class Categories extends Database{
     public function updateCategory($category_name, $id){
         $query = "UPDATE categories SET category_name = :category_name WHERE category_id = :id";
         $res = $this->connect()->prepare($query);
-        return $res->execute(['category_name' => ucfirst(strtolower($category_name)), 'id' => $id]);
+        return $res->execute(['category_name' => $category_name, 'id' => $id]);
     }
 
     //Comprueba si la categoria existe

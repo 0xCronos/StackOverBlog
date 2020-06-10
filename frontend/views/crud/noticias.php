@@ -4,16 +4,21 @@
             <div id="form-box" class="bg-light text-dark">
                 <form id="createNewForm" method="POST" enctype="multipart/form-data">
                     <h2 class="text-center">Crear noticia</h2>
+
                     <!-- titulo -->
-                    <div class="form-group">
-                        <label class="d-inline" for="new_title">Titulo</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Título</span>
+                        </div>
                         <input type="text" class="form-control" name="new_title">
                     </div>
 
                     <!-- categorias-->
-                    <div class="form-group">
-                        <label class="d-inline" for="category_id">Categoría</label>
-                        <select class="form-control-sm" name="category_id">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="category_id">Categoría</label>
+                        </div>
+                        <select class="custom-select" name="category_id">
                             <option value="" selected disabled hidden>Elegir categoría</option>
                             <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                         </select>
@@ -42,24 +47,28 @@
                     </div>
 
                     <!-- imagen noticia -->
-                    <div class="form-group">
-                        <label for="image">Imagen</label>
-                        <input type="file" class="form-control-file" name="image" accept="image/*">
+                    <div class="input-group mb-3 mt-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Imagen noticia</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
                     </div>
 
                     <div class="form-group text-center mt-4">
-                            <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
-                            <span class="text-danger" id="registerResponse"></span>
+                        <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
+                        <span class="text-danger" id="registerResponse"></span>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+<hr class="container">
 <div class="mt-1" ng-controller="controladorCrudNoticias">
     <div class="container mb-5" ng-repeat="new in news">
-        <hr class="container">
         <div id="form-row" class="row justify-content-center align-items-center">
             <div id="form-column" class="col-lg-10 mt-0">
                 <div id="form-box" class="bg-light text-dark">
@@ -78,15 +87,19 @@
                         </div>
 
                         <!-- titulo -->
-                        <div class="form-group">
-                            <label class="d-inline" for="new_title">Titulo</label>
-                            <input type="text" class="form-control" name="new_title" value="{{new.new_title}}">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Título</span>
+                            </div>
+                            <input type="text" class="form-control" name="new_title"  value="{{new.new_title}}">
                         </div>
 
                         <!-- categorias-->
-                        <div class="form-group">
-                            <label class="d-inline" for="category_id">Categoría</label>
-                            <select class="form-control-sm" name="category_id">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="category_id">Categoría</label>
+                            </div>
+                            <select class="custom-select" name="category_id">
                                 <option value="" selected disabled hidden>Elegir categoría</option>
                                 <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                             </select>
@@ -108,15 +121,23 @@
                             </div>
                         </div>
 
+                        <hr>
+                        
                         <!-- cuerpo noticia -->
                         <div class="form-group">
                             <label class="d-inline" for="new_body">Cuerpo de la noticia</label>
                             <textarea class="form-control" name="new_body" rows="14" placeholder="Ingresa el cuerpo de la noticia...">{{new.new_body}}</textarea>
                         </div>
+
                         <!-- imagen noticia -->
-                        <div class="form-group">
-                            <label for="image">Imagen</label>
-                            <input type="file" class="form-control-file" name="image" accept="image/*">
+                        <div class="input-group mb-3 mt-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Imagen noticia</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
                         </div>
 
                         <div class="text-center">

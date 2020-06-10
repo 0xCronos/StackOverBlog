@@ -13,6 +13,7 @@ body{
     /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,22,131,1) 0%, rgba(97,170,231,1) 90% ); */
     /* background-image: linear-gradient( 109.6deg,  rgba(3,195,187,1) 11.2%, rgba(180,196,255,1) 91.1% ); */
     /* background-image: linear-gradient( 114.1deg,  rgba(96,56,19,1) 2.9%, rgba(178,159,148,1) 157.9% ); */
+    /* background: linear-gradient(to right, #01f0cd, #4ca2cd); */
     background: linear-gradient( to left,  rgba(127,113,116,1) 0.1%, rgba(79,70,72,1) 90% );
     width: 100%;
 	z-index: 3;

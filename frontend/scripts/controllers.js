@@ -251,7 +251,22 @@ app.controller('controladorCrudNoticias', function($scope, $http){
 
 app.controller('controladorCrudCategorias', function($scope, $http){
     $scope.categories = [];
-    
+   
+    $scope.modificarCategoria = function(id){
+        var conexion = "#c-" + id;
+        var nombre  = $(conexion).val();
+        console.log("category_id="+id+"&category_name="+nombre);
+        $.ajax({
+            url: '../backend/controllers/modifyCategoryCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: "category_id="+id+"&category_name="+nombre
+        })
+        .done(function (data) {
+            window.location.reload();
+        })
+    }
+
     $scope.deleteCategory = function(id) {
         var elemento = "."+ id;
         $.ajax({
