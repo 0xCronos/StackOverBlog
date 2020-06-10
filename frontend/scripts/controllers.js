@@ -1,5 +1,5 @@
 app.controller('controladorInicio', function($scope, $http){
-    $scope.section = "Ultimas noticias"
+    $scope.section = ""
     $scope.targetingNew = false;
     $scope.news = [];
 
@@ -15,6 +15,7 @@ app.controller('controladorInicio', function($scope, $http){
 
     $scope.loadLastNews = function(amount){
         $scope.targetingNew = false;
+        $scope.section = "Ultimas noticias"
         $http.get("../backend/controllers/getNewsCtr.php?amount="+amount)
         .then(function (response){
             $scope.news = response.data;
@@ -25,6 +26,7 @@ app.controller('controladorInicio', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response){
@@ -69,7 +71,7 @@ app.controller('controladorInicio', function($scope, $http){
 });
 
 app.controller('controladorNoticias', function($scope, $http){
-    $scope.section = "Noticias"
+    $scope.section = ""
     $scope.targetingNew = false;
     $scope.news = [];
      $scope.user_id;
@@ -83,6 +85,7 @@ app.controller('controladorNoticias', function($scope, $http){
     });
 
     $scope.loadAllNews = function(){
+        $scope.section = "Noticias"
         $scope.targetingNew = false;
         $http.get("../backend/controllers/getNewsCtr.php")
         .then(function (response) {
@@ -94,6 +97,7 @@ app.controller('controladorNoticias', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response) {
@@ -129,7 +133,7 @@ app.controller('controladorNoticias', function($scope, $http){
             dataType: 'text',
             data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
         })
-        .done(function (data) {
+        .done(function(data){
             window.location.reload();
         })
     }
@@ -140,7 +144,7 @@ app.controller('controladorNoticias', function($scope, $http){
 app.controller("controladorNuevaNoticia",function($scope, $http){
     $scope.categorias = [];
     $http.get("../backend/controllers/getCategoriesCtr.php")
-    .then(function (response) {
+    .then(function(response){
         $scope.categorias = response.data;
     })
 })

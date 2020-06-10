@@ -14,7 +14,7 @@
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo (visible para todos)</label>
                                     <input type="name" class="form-control"
-                                        placeholder="Ingresa tu nombre completo o un nombre de usuario" name="fullname">
+                                        placeholder="Ingresa tu nombre completo o un alias" name="fullname">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Correo electrónico</label>
