@@ -10,7 +10,13 @@ body{
 /******* BARRA HORIZONTAL DE SIGN-IN LOGIN *******/
 .barraSuperior{
 	box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .8);
-    background: linear-gradient(to right, #5BAB99, #4ca2cd);
+    
+    background: rgb(123,213,194);
+    background: -moz-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%);
+    background: -webkit-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%);
+    background: linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7bd5c2",endColorstr="#7bd5c2",GradientType=1);
+
     width: 100%;
 	z-index: 3;
 	top: 0;
@@ -75,11 +81,11 @@ input[name="estrellas"] {
 
 
 .seccionNoticia{
-    background: rgb(70,139,149);
-    background: -moz-linear-gradient(90deg, rgba(70,139,149,1) 10%, rgba(47,57,83,1) 50%, rgba(70,139,149,1) 90%);
-    background: -webkit-linear-gradient(90deg, rgba(70,139,149,1) 10%, rgba(47,57,83,1) 50%, rgba(70,139,149,1) 90%);
-    background: linear-gradient(90deg, rgba(70,139,149,1) 10%, rgba(47,57,83,1) 50%, rgba(70,139,149,1) 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#468b95",endColorstr="#468b95",GradientType=1);
+    background: rgb(14,150,156);
+    background: -moz-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
+    background: linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e969c",endColorstr="#244655",GradientType=1);
 
     box-shadow: 3px -1px 10px 0px rgba(51,51,51,0.34);
 }
@@ -119,7 +125,7 @@ input[name="estrellas"] {
 }
 
 .fa-id-card:hover{
-    color: #C84C4E;
+    color: #0EAFB5;
 }
 
 .editarPerfil{
@@ -149,7 +155,7 @@ input[name="estrellas"] {
     position: absolute;
 }
 .fotoEditarPerfil{
-    width: 20%;
+    width:30%;
     border-radius: 2%;
     border: 1px solid #0EAFB5;
 }

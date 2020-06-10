@@ -68,7 +68,15 @@
 </div>
 <hr class="container">
 <div class="mt-1" ng-controller="controladorCrudNoticias">
-    <div class="container mb-5" ng-repeat="new in news">
+
+    <div class="container input-group mt-5 px-5">
+        <div class="input-group-prepend">
+            <span class="input-group-text btn-formulario">Buscar noticia</span>
+        </div>
+        <input type="text" class="form-control" ng-model="busquedaCrudNoticias" placeholder="Busqueda">
+    </div>
+
+    <div class="container mb-5" ng-repeat="new in news | filter: busquedaCrudNoticias">
         <div id="form-row" class="row justify-content-center align-items-center">
             <div id="form-column" class="col-lg-10 mt-0">
                 <div id="form-box" class="bg-light text-dark">
@@ -91,7 +99,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Título</span>
                             </div>
-                            <input type="text" class="form-control" name="new_title"  value="{{new.new_title}}">
+                            <input type="text" class="form-control" name="new_title" value="{{new.new_title}}">
                         </div>
 
                         <!-- categorias-->
@@ -122,7 +130,7 @@
                         </div>
 
                         <hr>
-                        
+
                         <!-- cuerpo noticia -->
                         <div class="form-group">
                             <label class="d-inline" for="new_body">Cuerpo de la noticia</label>

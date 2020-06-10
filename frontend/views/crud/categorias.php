@@ -27,7 +27,7 @@
                 <div class="container text-center">
                     <form class="categoryForm" action="POST">
                         <input class="categoryNameInput" name="category_name" type="text">
-                        <input class="btn btn-dark" value="Agregar nueva categoría" type="submit">
+                        <input class="btn btn-formulario" value="Agregar nueva categoría" type="submit">
                     </form>
                 </div>
             </ul>

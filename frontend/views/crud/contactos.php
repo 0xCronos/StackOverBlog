@@ -13,15 +13,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="contacto in contactos">
+                        <tr ng-repeat="contacto in contactos | filter:busquedaContactos">
                             <td class="description">{{contacto.contact_id}}</td>
                             <td class="user">{{contacto.contact_fullname}}</td>
                             <td class="description">{{contacto.contact_email}}</td>
 
                             <td class="comment">{{contacto.contact_text}}</td>
-                            <form ng-hide="true" action="POST">
-                                <input type="text"  value="{{contacto.contact_id}}" class="{{contacto.contact_id}}">
-                            </form>
+                            <div class="text-right mb-4">
+                                <input class="btn border-dark" type="text" ng-model="busquedaContactos" placeholder="Busqueda">
+                            </div>
                             <td><i class="far fa-trash-alt eliminar" ng-click="eliminarContacto(contacto.contact_id)"></i></td>
                         </tr>
                     </tbody>
