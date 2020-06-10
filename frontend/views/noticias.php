@@ -1,11 +1,13 @@
 <div ng-controller="controladorNoticias">
-    <div class="content">
-        <div class="row" style="margin-left: 20%; margin-right: 6%;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 p-0">
+                <?php require_once "views/templates/barraIzquierda.phtml";?>
+            </div>
             <div class="col-lg-7 contenedorPrincipal">
                 <?php require_once "views/templates/mostrarNoticias.phtml";?>
             </div>
-            <div class="col-lg-1"></div>
-            <div class="col-md-4 contenedorPrincipal perfil">
+            <div class="col-lg-3 contenedorPrincipal perfil">
                 <?php require_once "views/templates/perfil.phtml";?>
             </div>
         </div>
