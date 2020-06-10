@@ -29,7 +29,7 @@ class UserSession{
     public function checkSession(){
         return (isset($_SESSION['user_id'])) ? true : false;
     }
-    
+
     //Cierra sesion
     public function closeSession(){
         session_unset();
