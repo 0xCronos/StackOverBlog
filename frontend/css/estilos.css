@@ -171,6 +171,10 @@ input[name="estrellas"] {
     border: 2px solid #0EAFB5;
 }
 
+.fechaComentario{
+    font-size: 10px;
+}
+
 @media(max-width:1000px){
 	.perfil{
 		display: none;
