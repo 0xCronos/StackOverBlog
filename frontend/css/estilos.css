@@ -182,6 +182,14 @@ input[name="estrellas"] {
     font-size: 10px;
 }
 
+.migaDePan{
+    color: white;
+}
+
+.migaDePan:hover{
+    color: #D35953;
+}
+
 @media(max-width:1000px){
 	.perfil{
 		display: none;

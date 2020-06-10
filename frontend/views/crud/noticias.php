@@ -59,7 +59,7 @@
 
                     <div class="form-group text-center mt-4">
                         <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
-                        <span class="text-danger" id="registerResponse"></span>
+                        <span class="text-danger registerResponse"></span>
                     </div>
                 </form>
             </div>
@@ -112,6 +112,10 @@
                             </select>
                         </div>
 
+                        <div class="container">
+                            <p>Categoria actual: {{new.category_name}}</p>
+                        </div>
+
                         <!-- estado -->
                         <div class="form-group">
                             <div class="form-check-inline">
@@ -125,6 +129,9 @@
                             <div class="form-check-inline">
                                 <input class="form-check-input" required type="radio" name="state_id" value="3">
                                 <label class="form-check-label" for="notPublic">No público</label>
+                            </div>
+                            <div class="container mt-3">
+                                <p>Estado actual: {{new.state_type}}</p>
                             </div>
                         </div>
 
@@ -168,7 +175,7 @@
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="comment in new.comments | orderBy:'+comment_id'">
-                                            <input type="hidden" name="category_id" value="{{comment.comment_id}}" class="{{comment.comment_id}}">
+                                            <input type="hidden" value="{{comment.comment_id}}">
                                             <td scope="row">{{comment.comment_id}}</td>
                                             <td>{{comment.user_fullname}}</td>
                                             <td>{{comment.comment_timestamp}}</td>
@@ -182,7 +189,7 @@
                         <!-- BOTON -->
                         <div class="form-group text-center mt-4">
                             <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" ng-click="actualizarNoticia(new.new_id)" value="Modificar">
-                            <span class="text-danger" id="registerResponse"></span>
+                            <span class="text-danger registerResponse"></span>
                         </div>
                     </form>
                 </div>

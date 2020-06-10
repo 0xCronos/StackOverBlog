@@ -1,5 +1,9 @@
 <section>
-    <header ng-hide="targetNew == 1" class="seccionNoticia text-white text-center">{{section}}</header>
+    <header class="seccionNoticia text-white text-center">
+        <a class="text-decoration-none migaDePan" href="index.php?pagina=inicio" ng-hide="targetingNew != 1">Inicio</a>
+        <span class="text-white" ng-hide="targetingNew != 1"> / </span>
+        {{section}}
+    </header>
     <!-- Noticias -->
     <article class="noticia p-5 mb-5" ng-repeat="new in news | filter:buscarNoticia">
         <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-long-arrow-alt-left fa-lg text-dark"></i></a>
