@@ -2,14 +2,16 @@ app.controller('controladorInicio', function($scope, $http){
     $scope.section = "Ultimas noticias"
     $scope.targetingNew = false;
     $scope.news = [];
-    $scope.user_id;
-    $http.get("../backend/controllers/getCurrentUserIdCtr.php")
-        .then(function (response) {
-                $scope.user_id = response.data.user_id;
-            }
-            ,function () {
-            })
 
+    $scope.user_id;
+    //carga usuario logeado    
+    $http.get("../backend/controllers/getCurrentUserIdCtr.php")
+    .then(function (response) {
+        $scope.user_id = response.data.user_id;
+    }
+    ,function(error) {
+        console.warn(error);
+    })
 
     $scope.loadLastNews = function(amount){
         $scope.targetingNew = false;
@@ -32,8 +34,7 @@ app.controller('controladorInicio', function($scope, $http){
             console.warn(error);
         })
     }
-    $scope.loadLastNews(5);
-
+    
     $scope.guardarRating = function (rating,id_noticia) {
         $.ajax({
             url: '../backend/controllers/addRatingCtr.php',
@@ -41,15 +42,15 @@ app.controller('controladorInicio', function($scope, $http){
             dataType: 'text',
             data: "rating_value="+rating+"&new_id="+id_noticia
         })
-            .done(function (data) {
-                if(data=="El usuario ya voto"){
-                    alert(data);
-                }else{
-                    alert("votacion exitosa");
-                }
-            })
+        .done(function (data) {
+            if(data=="El usuario ya voto"){
+                alert(data);
+            }else{
+                alert("votacion exitosa");
+            }
+        })
     }
-
+        
     $scope.comentar = function(id){
         console.log($scope.user_id)
         console.log(id)
@@ -59,17 +60,27 @@ app.controller('controladorInicio', function($scope, $http){
             dataType: 'text',
             data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
         })
-            .done(function (data) {
-                window.location.reload();
-            })
+        .done(function (data) {
+            window.location.reload();
+        })
     }
-
+        
+    $scope.loadLastNews(5);
 });
 
 app.controller('controladorNoticias', function($scope, $http){
     $scope.section = "Noticias"
     $scope.targetingNew = false;
     $scope.news = [];
+     $scope.user_id;
+    //carga usuario logeado    
+    $http.get("../backend/controllers/getCurrentUserIdCtr.php")
+    .then(function (response) {
+        $scope.user_id = response.data.user_id;
+    }
+    ,function(error) {
+        console.warn(error);
+    });
 
     $scope.loadAllNews = function(){
         $scope.targetingNew = false;
@@ -92,6 +103,37 @@ app.controller('controladorNoticias', function($scope, $http){
             console.warn(error);
         })
     }
+    
+    $scope.guardarRating = function (rating,id_noticia) {
+        $.ajax({
+            url: '../backend/controllers/addRatingCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: "rating_value="+rating+"&new_id="+id_noticia
+        })
+        .done(function (data) {
+            if(data=="El usuario ya voto"){
+                alert(data);
+            }else{
+                alert("votacion exitosa");
+            }
+        })
+    }
+        
+    $scope.comentar = function(id){
+        console.log($scope.user_id)
+        console.log(id)
+        $.ajax({
+            url: '../backend/controllers/addCommentCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
+        })
+        .done(function (data) {
+            window.location.reload();
+        })
+    }
+
     $scope.loadAllNews();
 });
 

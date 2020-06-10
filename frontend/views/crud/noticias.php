@@ -11,6 +11,7 @@
         <div class="form-group">
             <label class="d-inline" for="category_id">Categoría</label>
             <select class="form-control-sm" name="category_id">
+                <option value="" selected disabled hidden>Elegir categoría</option>
                 <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
             </select>
         </div>
@@ -71,6 +72,7 @@
             <div class="form-group">
                 <label class="d-inline" for="category_id">Categoría</label>
                 <select class="form-control-sm" name="category_id">
+                    <option value="" selected disabled hidden>Elegir categoría</option>
                     <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                 </select>
             </div>
