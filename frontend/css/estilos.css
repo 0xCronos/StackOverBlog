@@ -127,6 +127,21 @@ input[name="estrellas"] {
     border: 1px solid #0EAFB5;
 }
 
+.fotoEditarNoticia{
+    width: 50%;
+    border-radius: 2%;
+    border: 1px solid #0EAFB5;
+}
+
+.bordePerfil{
+    padding: 2%;
+    border: 1px solid #0EAFB5;
+}
+
+.fotoPerfil{
+    
+}
+
 @media(max-width:1000px){
 	.perfil{
 		display: none;

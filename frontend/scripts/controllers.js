@@ -311,16 +311,14 @@ app.controller('controladorCrudContactos', function($scope, $http){
         })
 
         $scope.eliminarContacto = function (id) {
-            var elemento = "."+ id;
             $.ajax({
                 url: '../backend/controllers/deleteContactCtr.php',
                 type: 'POST',
                 dataType: 'text',
-                data: $(elemento).serialize()
+                data: 'contact_id=' + id
             })
             .done(function (data) {
                 window.location.reload();
-
             })
         }
     })

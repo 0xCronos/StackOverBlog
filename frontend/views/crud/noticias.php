@@ -47,7 +47,10 @@
                         <input type="file" class="form-control-file" name="image" accept="image/*">
                     </div>
 
-                    <button class="btn btn-primary mb-1" type="submit">Crear noticia</button>
+                    <div class="form-group text-center mt-4">
+                            <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
+                            <span class="text-danger" id="registerResponse"></span>
+                    </div>
                 </form>
             </div>
         </div>
@@ -68,7 +71,7 @@
                     <form method="POST" id="modifyNews" class="noticia-{{new.new_id}}" enctype="multipart/form-data">
 
                         <h2 class="text-center">Modificar noticia id {{new.new_id}}</h2>
-                        
+
                         <!-- id noticia (oculto) -->
                         <div class="form-group">
                             <input type="hidden" class="form-control idNoticia-{{new.new_id}}" name="new_id" value="{{new.new_id}}">
@@ -116,6 +119,10 @@
                             <input type="file" class="form-control-file" name="image" accept="image/*">
                         </div>
 
+                        <div class="text-center">
+                            <img src="../backend/assets{{new.new_image}}" loading="lazy" class="fotoEditarNoticia">
+                        </div>
+
                         <!-- Sección de comentarios -->
                         <hr class="px-5">
                         <div class="form-group">
@@ -143,7 +150,7 @@
                             </table>
                         </div>
                         <!-- BOTON -->
-                        <div class="form-group text-center">
+                        <div class="form-group text-center mt-4">
                             <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Modificar">
                             <span class="text-danger" id="registerResponse"></span>
                         </div>
