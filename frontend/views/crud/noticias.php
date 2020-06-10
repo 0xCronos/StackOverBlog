@@ -118,12 +118,13 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="comment in new.comments | orderBy:'+comment_id'">
+                        <i class="far fa-trash-alt eliminar" ng-click="eliminarComentario(comment.comment_id)" ></i>
                             <input type="hidden" name="category_id" value="{{comment.comment_id}}" class="{{comment.comment_id}}">
                             <td scope="row">{{comment.comment_id}}</td>
                             <td>{{comment.user_fullname}}</td>
                             <td>{{comment.comment_timestamp}}</td>
                             <td>{{comment.comment_text}}</td>
-                            <td><i class="far fa-trash-alt eliminar" style="cursor: pointer;" ng-click="deleteCategory(category.category_id)"></i></td>
+                            <td><i class="far fa-trash-alt eliminar" style="cursor: pointer;" ng-click="eliminarComentario(comment.comment_id)"></i></td>
                         </tr>
                     </tbody>
                 </table>
