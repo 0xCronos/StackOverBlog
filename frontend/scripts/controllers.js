@@ -392,4 +392,44 @@ app.controller('controladorPerfil', function($scope, $http){
             console.warn(error);
         })
     }
+
+
 });
+
+app.controller("modificarPerfil",function ($scope,$http) {
+
+    $("form.editar_perfil").submit(function () {
+
+
+        var formEspecifico = $(".editar_perfil")[0];
+        console.log($(".editar_perfil")[0]);
+        var form = $(formEspecifico)[0];
+        var dataTransformado = new FormData(form);
+        console.log(dataTransformado);
+        $.ajax({
+            url: "../backend/controllers/modifyProfileCtr.php",
+            method: "POST",
+            enctype: "multipart/form-data",
+            processData: false,
+            contentType: false,
+            data: dataTransformado
+        })
+            .done(function (data) {
+                if(data!="1"){
+                    alert(data);
+                }else{
+                    window.location.assign("index.php?pagina=miPerfil");
+                }
+
+            })
+
+
+    })
+
+
+
+
+
+
+
+})
