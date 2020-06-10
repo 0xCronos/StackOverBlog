@@ -10,8 +10,13 @@
                     <div id="form-column" class="col-md-6">
                         <div id="form-box" class="bg-light text-dark">
 
-                            <form method="POST" enctype="multipart/form-data">
+                            <form method="POST" class="editar_perfil" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Actualizar Perfil</h3>
+
+                                <div ng-hide="true" class="form-group">
+                                    <label for="id">ID</label>
+                                    <input type="text" class="form-control" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                </div>
 
                                 <div class="form-group">
                                     <label for="user_fullname">Nombre completo</label>
