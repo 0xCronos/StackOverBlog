@@ -3,12 +3,12 @@
 
     <!-- nombre -->
     <h3 class="text-center small mt-3">Acerca del creador</h3>
-    <h1 class="text-center text-white h4 p-2">{{owner.user_fullname}}</h1>
+    <h1 class="text-center text-white h4 p-2 letraDerecha">{{owner.user_fullname}}</h1>
 
     <!-- imagen -->
-    <div class="text-white text-center mb-5 mb-5">
-        <a href="/cursos/tienda-flutter-laravel">
-            <img src="../backend/assets{{owner.user_image}}" loading="lazy" class="img-fluid mx-auto d-block">
+    <div class="text-white text-center mb-5 mb-5 ">
+        <a href="/cursos/tienda-flutter-laravel ">
+            <img src="../backend/assets{{owner.user_image}}" loading="lazy" class="img-fluid mx-auto d-block fotoBarraDerecha">
         </a>
 
         <!-- descripcion-->
@@ -23,9 +23,8 @@
         <h4 class="text-white p-1 d-block text-center small">Noticias mejores calificadas</h4>
 
         <ul class="list-group" ng-repeat="bestRatedNew in bestRatedNews">
-            <li class="list-group-item bg-transparent">
-                <a class="text-decoration-none text-white text-left" ng-click="targetNew(bestRatedNew.new_id)">{{$index +1}}.- {{bestRatedNew.new_title}}</a>
-
+            <li class="list-group-item bg-transparent" ng-click="targetNew(bestRatedNew.new_id)" style="cursor: pointer;">
+                <a class="text-decoration-none text-white text-left">{{$index +1}}.- {{bestRatedNew.new_title}}</a>
             </li>
         </ul>
     </div>

@@ -1,28 +1,76 @@
 
 var barraIzquierdaActiva = true;
 var tamaño = 16; //fuente tamaño 16, ocupado en la funcion cambiarTexto()
+var tamaño2 = 20;
+var tamaño3 = 16;
+var tamaño4 = 40;
+var tamaño5 = 24;
 var activo = 1;	//Bandera, ocupado en la funcion cambiarFondo()
 
 function cambiarTexto(valor){
-	tamaño = tamaño + valor;
-	$("body").css("font-size", tamaño);
+    tamaño = tamaño + valor;
+    tamaño2 = tamaño2 + valor;
+    tamaño3 = tamaño3 + valor;
+    tamaño4 = tamaño4 + valor;
+    tamaño5 = tamaño5 + valor;
+    $("body").css("font-size", tamaño);
+    $(".letraBlanca").css("font-size",tamaño);
+    $(".letraIzquierda").css("font-size",tamaño2);
+    $(".letraSuperior").css("font-size",tamaño3);
+    $(".letraNoticia").css("font-size",tamaño4);
+    $(".letraDerecha").css("font-size",tamaño5);
 }
 
 function cambiarfondo(){
-	if(activo){
-		$("body").css("background-color", "black");
-		$('body').css("transition", "2s");
-		$("body").css("color", "white");
-		activo = 0;
+    if(activo){
 
-	}else{
-		$("body").css("background-color", "white");
-		$('body').css("transition", "2s");
-		$("body").css("color", "black");
-		activo = 1;
-	}
+     $("body").css("background","#4b6cb7");
+     $("body").css("background","-webkit-linear-gradient(to right, #182848, #4b6cb7)");
+     $("body").css("background","linear-gradient(to right, #182848, #4b6cb7)");
+
+     $(".barraSuperior").css("background","#232526");
+     $(".barraSuperior").css("background","-webkit-linear-gradient(to right, #414345, #232526)");
+     $(".barraSuperior").css("background","linear-gradient(to right, #414345, #232526)");
+
+
+     $(".barraIzquierda").css("background","#485563");
+     $(".barraIzquierda").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
+     $(".barraIzquierda").css("background","linear-gradient(to bottom, #29323c, #485563)");
+
+     $(".barraDerecha").css("background","#485563");
+     $(".barraDerecha").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
+     $(".barraDerecha").css("background","linear-gradient(to bottom, #29323c, #485563)");
+
+     $(".seccionNoticia").css("background","#2b5876");
+     $(".seccionNoticia").css("background","-webkit-linear-gradient(to right, #4e4376, #2b5876)");
+     $(".seccionNoticia").css("background","linear-gradient(to right, #4e4376, #2b5876)");
+
+
+     $(".noticia").css("background","#485563");
+     $(".noticia").css("background","-webkit-linear-gradient(to right, #29323c, #485563");
+     $(".noticia").css("background","linear-gradient(to right, #29323c, #485563)");
+
+
+     $(".letraBlanca").css("color","#EEE");
+     $(".letraNegra").css("color","#EEE");
+     $(".letraNoticia").css("color","#EEE");
+     activo=0;
+
+    }else{
+
+      $("body").css("background","radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgba(239,249,249,1) 0%, rgba(182,199,226,1) 100.2% )");
+      $(".barraSuperior").css("background","linear-gradient( to left,  rgba(127,113,116,1) 0.1%, rgba(79,70,72,1) 90% )");
+      $(".barraIzquierda").css("background","linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
+      $(".barraDerecha").css("background","linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
+      $(".seccionNoticia").css("background","linear-gradient( to left,  rgba(127,113,116,1) 0.1%, rgba(79,70,72,1) 90% )");
+      $(".noticia").css("background","white");
+
+      $(".letraBlanca").css("color","white");
+      $(".letraNegra").css("color","black");
+      $(".letraNoticia").css("color","black");
+      activo=1;
+    }
 }
-
 function botonBarraIzquierda(){
 	if(barraIzquierdaActiva){
 		$('.barraIzquierda').css("display", "none");
@@ -69,7 +117,7 @@ $(document).ready(function(){
                 window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
                 window.location = "index.php?pagina=administrador";
-                
+
             }else{
                 alert("no funciona");
                 $("input[type=password]").val('');
@@ -95,7 +143,7 @@ $(document).ready(function(){
                 alert(data);
             }
         })
-    }) 
+    })
 
     //abre o cierra barra lateral izquierda
 	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());
