@@ -11,7 +11,7 @@
                             <form method="POST" action="../backend/controllers/registerCtr.php" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Registrarse</h3>
                                 <div class="form-group">
-                                    <label for="fullname">Nombre de usuario (visible para todos)</label>
+                                    <label for="fullname">Nombre completo (visible para todos)</label>
                                     <input type="name" class="form-control"
                                         placeholder="Ingresa tu nombre completo o un nombre de usuario" name="fullname">
                                 </div>
