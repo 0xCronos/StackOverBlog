@@ -7,27 +7,30 @@
         <h1 class="text-center letraNoticia" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
         <hr class="px-5">
 
-        <form class="calificacion">
-            <input type="radio" name="estrellas" value="5" class="5_rating">
-            <label for="radio1"  ng-click="guardarRating(5,new.new_id)">★</label>
-            <input type="radio" name="estrellas" value="4" class="4_rating">
-            <label for="radio2"  ng-click="guardarRating(4,new.new_id)">★</label>
-            <input type="radio" name="estrellas" value="3" class="3_rating">
-            <label for="radio3" ng-click="guardarRating(3,new.new_id)">★</label>
-            <input type="radio" name="estrellas" value="2" class="2_rating">
-            <label for="radio4" ng-click="guardarRating(2,new.new_id)">★</label>
-            <input type="radio" name="estrellas" value="1" class="1_rating">
-            <label for="radio5" ng-click="guardarRating(1,new.new_id)">★</label>
-        </form>
+        <div>
+            <h6 class="text-right mr-3" style="font-size: 12px">({{new.rating}} de 5)</h6>
+            <!-- imagen usuario | categoria noticia | fecha creacion -->
+            <span class="letraNegra"><img class="rounded-circle mb-1" loading="lazy" src="../backend/assets/{{new.user_image}}" width="32px" height="32px"> | {{new.category_name}} | {{new.new_timestamp}}
 
-        <!-- imagen usuario | categoria noticia | fecha creacion -->
-        <span class="letraNegra"><img class="rounded-circle mb-1" src="../backend/assets/{{new.user_image}}" width="32px"
-                height="32px"> | {{new.category_name}} | {{new.new_timestamp}}
-        </span>
-        
+                <form class="calificacion">
+                    <input type="radio" name="estrellas" value="5" class="5_rating">
+                    <label for="radio1" ng-click="guardarRating(5,new.new_id)">★</label>
+                    <input type="radio" name="estrellas" value="4" class="4_rating">
+                    <label for="radio2" ng-click="guardarRating(4,new.new_id)">★</label>
+                    <input type="radio" name="estrellas" value="3" class="3_rating">
+                    <label for="radio3" ng-click="guardarRating(3,new.new_id)">★</label>
+                    <input type="radio" name="estrellas" value="2" class="2_rating">
+                    <label for="radio4" ng-click="guardarRating(2,new.new_id)">★</label>
+                    <input type="radio" name="estrellas" value="1" class="1_rating">
+                    <label for="radio5" ng-click="guardarRating(1,new.new_id)">★</label>
+                </form>
+            </span>
+        </div>
+
+
         <!-- Imagen noticia (opcional) -->
         <div class="content text-center mt-4 mb-5">
-            <img class="img-fluid" src="../backend/assets/{{new.new_image}}" ng-hide="new.new_image == null" width="850em" height="auto">
+            <img class="img-fluid" loading="lazy" src="../backend/assets/{{new.new_image}}" ng-hide="new.new_image == null" width="850em" height="auto">
         </div>
 
         <!-- cuerpo noticia -->
@@ -37,22 +40,21 @@
         <hr class="px-5">
         <div class="content mb-1">
             <!-- expande comentarios -->
-            
+
             <button class="btn expandComments bg-transparent letraNegra" type="button" onclick="expandComments(this)"><i class="far fa-comment-alt mr-1"></i>Comentar</button>
 
             <div class="content d-inline commentsBox">
 
                 <!-- comentarios -->
                 <div class="container mt-3 d-none" ng-repeat="comment in new.comments">
-                    <span class="font-weight-bold letraNegra">{{comment.user_fullname}}</span>
+                    <a href="index.php?pagina=perfil&id={{comment.user_id}}" class="font-weight-bold letraNegra span">{{comment.user_fullname}}</a>
                     <span class="letraNegra">{{comment.comment_timestamp}}</span>
                     <p class="letraNegra">{{comment.comment_text}}</p>
                 </div>
 
                 <!-- campo para comentar -->
                 <div class="container mt-3 d-none">
-                    <textarea class="form-control mb-1 caja-comentarios-{{new.new_id}}" id="new_body" rows="4" placeholder="Escribe aqui..."
-                        style="resize: none;"></textarea>
+                    <textarea class="form-control mb-1 caja-comentarios-{{new.new_id}}" id="new_body" rows="4" placeholder="Escribe aqui..." style="resize: none;"></textarea>
                     <input type="button" ng-click="comentar(new.new_id)" value="Comentar">
                 </div>
             </div>

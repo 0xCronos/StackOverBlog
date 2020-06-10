@@ -127,7 +127,6 @@ $(document).ready(function(){
     })
 
     //REGISTRARSE
-
     $(".registerForm").submit(function (e) {
         e.preventDefault();
         var form = $('.registerForm')[0];
@@ -148,7 +147,7 @@ $(document).ready(function(){
             })
     })
 
-   //AJAX ENVIAR CONTACTO
+    //AJAX ENVIAR CONTACTO
     $(".contactForm").submit(function (e) {
         e.preventDefault();
         $.ajax({

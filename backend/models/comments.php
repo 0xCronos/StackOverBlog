@@ -3,7 +3,7 @@ class Comments extends Database{
 
     //Busca los comentarios de una noticia con el id ingresado
     public function getCommentsFromNew($id){
-        $query = "SELECT comment_id, comment_timestamp, comment_text, users.user_fullname, new_id
+        $query = "SELECT comment_id, comment_timestamp, comment_text, users.user_id, users.user_fullname, new_id
                   FROM comments
                   INNER JOIN users ON comments.user_id=users.user_id
                   WHERE new_id = :id
