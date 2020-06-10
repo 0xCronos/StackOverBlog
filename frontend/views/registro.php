@@ -9,7 +9,7 @@
                 <div id="form-row" class="row justify-content-center align-items-center">
                     <div id="form-column" class="col-md-6">
                         <div id="form-box" class="bg-light text-dark">
-                            <form method="POST" action="../backend/controllers/registerCtr.php" enctype="multipart/form-data">
+                            <form method="POST" class="registerForm" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Registrarse</h3>
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo (visible para todos)</label>

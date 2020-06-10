@@ -126,6 +126,28 @@ $(document).ready(function(){
         })
     })
 
+    //REGISTRARSE
+
+    $(".registerForm").submit(function (e) {
+        e.preventDefault();
+        var form = $('.registerForm')[0];
+        var data = new FormData(form);
+        $.ajax({
+            url: '../backend/controllers/registerCtr.php',
+            method: 'POST',
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            data: data
+        })
+            .done(function (data) {
+                if(data=="usuario creado con exito"){
+                    alert(data);
+                }
+
+            })
+    })
+
    //AJAX ENVIAR CONTACTO
     $(".contactForm").submit(function (e) {
         e.preventDefault();
