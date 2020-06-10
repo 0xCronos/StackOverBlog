@@ -6,7 +6,7 @@
             </div>
             <div class="col-lg-7 contenedorPrincipal">
                 <div class="text-right">
-                    <input class="mb-3 btn btn-dark" type="text" ng-model="buscarNoticia" placeholder="Busqueda">
+                    <input class="mb-3 btn border-dark" type="text" ng-model="buscarNoticia" placeholder="Busqueda">
                 </div>
                 <?php require_once "views/templates/mostrarNoticias.phtml";?>
             </div>

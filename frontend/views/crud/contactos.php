@@ -20,7 +20,7 @@
 
                             <td class="comment">{{contacto.contact_text}}</td>
                             <form ng-hide="true" action="POST">
-                                <input type="text" name="contact_id" value="{{contacto.contact_id}}" class="{{contacto.contact_id}}">
+                                <input type="text"  value="{{contacto.contact_id}}" class="{{contacto.contact_id}}">
                             </form>
                             <td><i class="far fa-trash-alt eliminar" ng-click="eliminarContacto(contacto.contact_id)"></i></td>
                         </tr>
