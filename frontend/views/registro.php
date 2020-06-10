@@ -49,7 +49,7 @@
 
                                 <!-- BOTON -->
                                 <div class="form-group text-center">
-                                    <input id="registerResponse" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Registrarse">
+                                    <input id="registerForm" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Registrarse">
                                     <span class="text-danger" ></span>
                                 </div>
                             </form>

@@ -72,6 +72,10 @@ $userSession = new UserSession();
     <script src="https://kit.fontawesome.com/e632f1f723.js" crossorigin="anonymous"></script>
 
     <script src="../frontend/scripts/register.js"></script>
+    <script src="../frontend/scripts/editarPerfil.js"></script>
+    <script src="../frontend/scripts/iniciarSesion.js"></script>
+    <script src="../frontend/scripts/contacto.js"></script>
+    <script src="../frontend/scripts/editNew.js"></script>
 
 </body>
 </html>

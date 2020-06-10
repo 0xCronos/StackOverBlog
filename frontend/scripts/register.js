@@ -1,9 +1,9 @@
+
 var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\.]+$/;
 var exprPw = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 
-
 $(document).ready(function(){
-    $("#registerResponse").click(function(){
+    $("#registerForm").click(function(){
         var nombre = $("#nombre").val();
         var correo = $("#email").val();
         var password = $("#password").val();
@@ -31,6 +31,7 @@ $(document).ready(function(){
                         $("#mensajePw").fadeOut();
                         if(description == "" || description.length > 2040){
                             $("#mensaje4").fadeIn();
+                            return false;
                         }else{
                             $("#mensaje4").fadeOut();
                         }
