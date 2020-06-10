@@ -6,12 +6,12 @@ app.controller('controladorInicio', function($scope, $http){
     $scope.user_id;
     //carga usuario logeado    
     $http.get("../backend/controllers/getCurrentUserIdCtr.php")
-        .then(function (response) {
-                $scope.user_id = response.data.user_id;
-            }
-            ,function () {
-            })
-
+    .then(function (response) {
+        $scope.user_id = response.data.user_id;
+    }
+    ,function(error) {
+        console.warn(error);
+    })
 
     $scope.loadLastNews = function(amount){
         $scope.targetingNew = false;
