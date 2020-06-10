@@ -120,6 +120,17 @@ input[name="estrellas"] {
     border: 3px solid #3B240A;
 }
 
+.error{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-right: 500px;
+    padding: 10px;
+    position: absolute;
+}
+
 @media(max-width:1000px){
 	.perfil{
 		display: none;
