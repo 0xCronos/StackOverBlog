@@ -130,6 +130,9 @@
                                 <input class="form-check-input" required type="radio" name="state_id" value="3">
                                 <label class="form-check-label" for="notPublic">No público</label>
                             </div>
+                            <div class="container mt-3">
+                                <p>Estado actual: {{new.state_type}}</p>
+                            </div>
                         </div>
 
                         <hr>
@@ -172,7 +175,7 @@
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="comment in new.comments | orderBy:'+comment_id'">
-                                            <input type="hidden" name="category_id" value="{{comment.comment_id}}" class="{{comment.comment_id}}">
+                                            <input type="hidden" value="{{comment.comment_id}}">
                                             <td scope="row">{{comment.comment_id}}</td>
                                             <td>{{comment.user_fullname}}</td>
                                             <td>{{comment.comment_timestamp}}</td>

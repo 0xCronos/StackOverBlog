@@ -126,7 +126,7 @@ $(document).ready(function(){
             data: $(".loginForm").serialize()
         })
         .done(function (data) {
-            console.log(data);
+            // console.log(data);
             if(data == "user"){
                 window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
@@ -134,7 +134,7 @@ $(document).ready(function(){
 
             }else{
                 $("input[type=password]").val('');
-                $("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
+                $("#respuestaLogin").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })

@@ -28,7 +28,7 @@ class News extends Database{
         }
 
         //consulta por defecto
-        $query = "SELECT new_id, new_title, new_image, new_body, new_timestamp, author_id, categories.category_name, users.user_fullname, users.user_image
+        $query = "SELECT new_id, new_title, new_image, new_body, new_timestamp, author_id, news_states.state_type, categories.category_name, users.user_fullname, users.user_image
                   FROM news
                   INNER JOIN news_states ON news.state_id=news_states.state_id
                   INNER JOIN categories ON news.category_id=categories.category_id
@@ -93,7 +93,7 @@ class News extends Database{
 
     //Busca noticia por id, retorna null si no existe
     public function getNew($id){
-        $query = "SELECT new_id, new_title, new_image, new_body, new_timestamp, author_id, categories.category_name, users.user_fullname, users.user_image
+        $query = "SELECT new_id, new_title, new_image, new_body, new_timestamp, author_id, news_states.state_type, categories.category_name, users.user_fullname, users.user_image
                   FROM news
                   INNER JOIN news_states ON news.state_id=news_states.state_id
                   INNER JOIN categories ON news.category_id=categories.category_id
