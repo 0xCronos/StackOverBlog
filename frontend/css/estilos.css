@@ -113,6 +113,22 @@ input[name="estrellas"] {
     color: #fff;
 }
 
+.btn-barra-derecha{
+    background-color: #3B240A;
+}
+
+.fa-id-card:hover{
+    color: #3B240A;
+}
+
+.editarPerfil{
+    color: #000;
+}
+
+.editarPerfil:hover{
+    color: #0EAFB5;
+}
+
 .fotoBarraDerecha{
     margin-top: 40px;
     height: auto;
@@ -135,11 +151,13 @@ input[name="estrellas"] {
 
 .bordePerfil{
     padding: 2%;
-    border: 1px solid #0EAFB5;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    border: 3px solid #0EAFB5;
 }
 
 .fotoPerfil{
-    
+    border-radius: 1%;
+    border: 2px solid #0EAFB5;
 }
 
 @media(max-width:1000px){

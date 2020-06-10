@@ -95,15 +95,15 @@
                         <!-- estado -->
                         <div class="form-group">
                             <div class="form-check-inline">
-                                <input class="form-check-input hola1" required type="radio" name="state_id" value="1">
+                                <input class="form-check-input" required type="radio" name="state_id" value="1">
                                 <label class="form-check-label" for="public">Público</label>
                             </div>
                             <div class="form-check-inline">
-                                <input class="form-check-input hola2" required type="radio" name="state_id" value="2">
+                                <input class="form-check-input" required type="radio" name="state_id" value="2">
                                 <label class="form-check-label" for="private">Privado</label>
                             </div>
                             <div class="form-check-inline">
-                                <input class="form-check-input hola3" required type="radio" name="state_id" value="3">
+                                <input class="form-check-input" required type="radio" name="state_id" value="3">
                                 <label class="form-check-label" for="notPublic">No público</label>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                         <!-- cuerpo noticia -->
                         <div class="form-group">
                             <label class="d-inline" for="new_body">Cuerpo de la noticia</label>
-                            <textarea class="form-control" name="new_body" rows="7" placeholder="Ingresa el cuerpo de la noticia...">{{new.new_body}}</textarea>
+                            <textarea class="form-control" name="new_body" rows="14" placeholder="Ingresa el cuerpo de la noticia...">{{new.new_body}}</textarea>
                         </div>
                         <!-- imagen noticia -->
                         <div class="form-group">
