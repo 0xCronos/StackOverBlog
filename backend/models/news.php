@@ -207,7 +207,12 @@ class News extends Database{
     }
 
     public function get5BestRatedNews(){
-        $query = "SELECT * FROM news inner join ratings on ratings.new_id = news.new_id order by ratings.rating_value desc limit 5";
+        $query = "SELECT round(avg(ratings.rating_value),1) AS rating_average, ratings.new_id, news.new_timestamp, news.new_title, news.new_body, news.new_image, news.state_id, news.category_id, news.author_id 
+                  FROM ratings 
+                  INNER JOIN news on news.new_id = ratings.new_id
+                  GROUP BY ratings.new_id
+                  ORDER BY rating_average
+                  DESC LIMIT 5";
         $res =  $this->connect()->query($query);
         return ($res->rowCount() > 0) ? $res->fetchAll(PDO::FETCH_ASSOC) : null;
     }
