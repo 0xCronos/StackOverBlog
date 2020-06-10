@@ -212,5 +212,11 @@ class News extends Database{
         return ($res->rowCount() > 0) ? $res->fetchAll(PDO::FETCH_ASSOC) : null;
     }
 
+    public function getImagePathOfNew($id){
+        $query = "SELECT new_image FROM news WHERE new_id = :id";
+        $res = $this->connect()->prepare($query);
+        $res->execute(['id' => $id]);
+        return ($res->rowCount() != 0) ? $res->fetch(PDO::FETCH_ASSOC)['new_image'] : null; 
+    }
 }
 ?>
