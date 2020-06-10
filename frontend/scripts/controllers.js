@@ -304,23 +304,21 @@ app.controller('controladorCrudContactos', function($scope, $http){
         $scope.contactos = [];
         $http.get("../backend/controllers/getContactsCtr.php")
         .then(function (response) {
-            scope.contactos = response.data;
+            $scope.contactos = response.data;
         }
         ,function(error){
             console.warn(error);
         })
 
         $scope.eliminarContacto = function (id) {
-            var elemento = "."+ id;
             $.ajax({
                 url: '../backend/controllers/deleteContactCtr.php',
                 type: 'POST',
                 dataType: 'text',
-                data: $(elemento).serialize()
+                data: 'contact_id=' + id
             })
             .done(function (data) {
                 window.location.reload();
-
             })
         }
     })

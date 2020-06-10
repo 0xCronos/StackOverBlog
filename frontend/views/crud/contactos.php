@@ -1,25 +1,35 @@
 <div class="container" ng-controller="controladorCrudContactos">
     <section id="news">
-      <ul>
-        <li>
-          <section id="comments">
+        <section id="comments">
             <ul id="list-comments">
+                <table class="table table-striped table-bordered table-condensed" style="width:100%">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Id</th>
+                            <th>Email</th>
+                            <th>Texto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="contacto in contactos">
+                            <td class="user">{{contacto.contact_fullname}}</td>
+                            <td class="description">{{contacto.contact_id}}</td>
+                            <td class="description">{{contacto.contact_email}}</td>
 
-              <fieldset ng-repeat="contacto in contactos" class="comments container-fluid">
+                            <td class="comment">{{contacto.contact_text}}</td>
+                            <form ng-hide="true" action="POST">
+                                <input type="text" name="contact_id" value="{{contacto.contact_id}}" class="{{contacto.contact_id}}">
+                            </form>
+                            <td><i class="far fa-trash-alt eliminar" ng-click="eliminarContacto(contacto.contact_id)"></i></td>
 
-                <legend class="user">{{contacto.contact_fullname}}</legend>
-                <p class="description">{{contacto.contact_id}} | {{contacto.contact_email}}</p>
-                <i class="far fa-trash-alt eliminar" ng-click="eliminarContacto(contacto.contact_id)" ></i>
 
-                <form ng-hide="true" action="POST">
-                  <input type="text" name="contact_id" value="{{contacto.contact_id}}" class="{{contacto.contact_id}}">
-                </form>
+                        </tr>
 
-                <li><p class="comment">{{contacto.contact_text}}</p></li>
-
+                    </tbody>
+                </table>
             </ul>
-          </section>
-        </li>
-      </ul>
+        </section>
     </section>
 </div>

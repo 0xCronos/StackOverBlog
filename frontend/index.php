@@ -35,6 +35,8 @@ $userSession = new UserSession();
             require_once "views/miPerfil.php";
         }else if($_GET['pagina'] == "perfil"){
             require_once "views/perfil.php";
+        }else if($_GET['pagina'] == "editarPerfil"){
+            require_once "views/editarPerfil.php";
         }else if($_GET['pagina'] == "administrador" && $userSession->checkUserPrivileges()){
             require_once "views/administrador.php";
         }else{

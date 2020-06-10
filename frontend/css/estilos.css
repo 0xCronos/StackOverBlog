@@ -44,11 +44,11 @@ body{
 }
 
 form.calificacion {
-  margin: 0 auto;
-  display: inline;
-  direction: rtl;
-  unicode-bidi: bidi-override;
-  float: right;
+    margin: 0 auto;
+    display: inline;
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    float: right;
 }
 
 #caja{
@@ -100,8 +100,8 @@ input[name="estrellas"] {
 }
 
 .container #form-row #form-column #form-box{
-    margin-top: 70px;
-    max-width: 900px;
+    margin-top: 40px;
+    max-width: auto;
     max-height: auto;
     padding: 20px;
     box-shadow: 2px 1px 4px 1px #0EAFB5;
@@ -119,6 +119,27 @@ input[name="estrellas"] {
     width: 350px;
     border-radius: 2%;
     border: 3px solid #3B240A;
+}
+
+.fotoEditarPerfil{
+    width: 20%;
+    border-radius: 2%;
+    border: 1px solid #0EAFB5;
+}
+
+.fotoEditarNoticia{
+    width: 50%;
+    border-radius: 2%;
+    border: 1px solid #0EAFB5;
+}
+
+.bordePerfil{
+    padding: 2%;
+    border: 1px solid #0EAFB5;
+}
+
+.fotoPerfil{
+    
 }
 
 @media(max-width:1000px){
