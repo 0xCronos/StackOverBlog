@@ -5,10 +5,9 @@
         </div>
         <div class="col-lg-10 contenedorPrincipal">
             <div class="container">
-                <!-- justify-content-center: Centra en el eje horizontal -->
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="bg-light text-dark">
+                <div id="form-row" class="row justify-content-center align-items-center">
+                    <div id="form-column" class="col-md-6">
+                        <div id="form-box" class="bg-light text-dark">
                             <form class="loginForm" id="loginForm" class="form" method="post">
                                 <h3 class="text-center text-dark">Iniciar Sesion</h3>
                                 <div class="form-group">
