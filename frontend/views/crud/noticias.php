@@ -53,7 +53,7 @@
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            <label class="custom-file-label" for="image"></label>
                         </div>
                     </div>
 
@@ -144,7 +144,7 @@
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                <label class="custom-file-label" for="image"></label>
                             </div>
                         </div>
 
@@ -156,27 +156,29 @@
                         <hr class="px-5">
                         <div class="form-group">
                             <h5>Comentarios</h5>
-                            <table class="table">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Usuario</th>
-                                        <th scope="col">Fecha creación</th>
-                                        <th scope="col">Comentario</th>
-                                        <th scope="col">Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="comment in new.comments | orderBy:'+comment_id'">
-                                        <input type="hidden" name="category_id" value="{{comment.comment_id}}" class="{{comment.comment_id}}">
-                                        <td scope="row">{{comment.comment_id}}</td>
-                                        <td>{{comment.user_fullname}}</td>
-                                        <td>{{comment.comment_timestamp}}</td>
-                                        <td>{{comment.comment_text}}</td>
-                                        <td><i class="far fa-trash-alt eliminar" style="cursor: pointer;" ng-click="eliminarComentario(comment.comment_id)"></i></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Usuario</th>
+                                            <th scope="col">Fecha creación</th>
+                                            <th scope="col">Comentario</th>
+                                            <th scope="col">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="comment in new.comments | orderBy:'+comment_id'">
+                                            <input type="hidden" name="category_id" value="{{comment.comment_id}}" class="{{comment.comment_id}}">
+                                            <td scope="row">{{comment.comment_id}}</td>
+                                            <td>{{comment.user_fullname}}</td>
+                                            <td>{{comment.comment_timestamp}}</td>
+                                            <td>{{comment.comment_text}}</td>
+                                            <td><i class="far fa-trash-alt eliminar" style="cursor: pointer;" ng-click="eliminarComentario(comment.comment_id)"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <!-- BOTON -->
                         <div class="form-group text-center mt-4">

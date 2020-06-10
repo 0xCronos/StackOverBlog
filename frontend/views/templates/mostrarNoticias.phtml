@@ -10,7 +10,10 @@
         <div>
             <h6 class="text-right mr-3" style="font-size: 12px">({{new.rating}} de 5)</h6>
             <!-- imagen usuario | categoria noticia | fecha creacion -->
-            <span class="letraNegra"><img class="rounded-circle mb-1" loading="lazy" src="../backend/assets/{{new.user_image}}" width="32px" height="32px"> | {{new.category_name}} | {{new.new_timestamp}}
+            <span class="letraNegra">
+                <a href="index.php?pagina=perfil&id={{new.author_id}}"><img class="rounded-circle mb-1" loading="lazy" src="../backend/assets/{{new.user_image}}" width="32px" height="32px"></a> | 
+                {{new.category_name}} |
+                {{new.new_timestamp}}
 
                 <form class="calificacion">
                     <input type="radio" name="estrellas" value="5" class="5_rating">

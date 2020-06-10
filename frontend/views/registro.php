@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        <label class="custom-file-label" for="image"></label>
                                     </div>
                                 </div>
 
