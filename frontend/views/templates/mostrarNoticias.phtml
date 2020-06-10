@@ -1,7 +1,7 @@
 <section>
     <header ng-hide="targetNew == 1" class="seccionNoticia text-white text-center">{{section}}</header>
     <!-- Noticias -->
-    <article class="noticia p-5 mb-5" ng-repeat="new in news">
+    <article class="noticia p-5 mb-5" ng-repeat="new in news | filter:buscarNoticia">
         <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-long-arrow-alt-left fa-lg text-dark"></i></a>
 
         <h1 class="text-center letraNoticia" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
@@ -47,15 +47,20 @@
 
                 <!-- comentarios -->
                 <div class="container mt-3 d-none" ng-repeat="comment in new.comments">
-                    <a href="index.php?pagina=perfil&id={{comment.user_id}}" class="font-weight-bold letraNegra span">{{comment.user_fullname}}</a>
-                    <span class="letraNegra">{{comment.comment_timestamp}}</span>
+                    
+                    <a href="index.php?pagina=perfil&id={{comment.user_id}}" class="font-weight-bold letraNegra span">
+                        <img class="rounded-circle mb-1" loading="lazy" src="../backend/assets{{comment.user_image}}" width="32px" height="32px">
+                        {{comment.user_fullname}}
+                    </a>
+                    
+                    <span class="letraNegra ml-1 fechaComentario">{{comment.comment_timestamp.split(" ")[0]}}</span>
                     <p class="letraNegra">{{comment.comment_text}}</p>
                 </div>
 
                 <!-- campo para comentar -->
                 <div class="container mt-3 d-none">
                     <textarea class="form-control mb-1 caja-comentarios-{{new.new_id}}" id="new_body" rows="4" placeholder="Escribe aqui..." style="resize: none;"></textarea>
-                    <input type="button" ng-click="comentar(new.new_id)" value="Comentar">
+                    <input type="button" ng-click="comentar(new.new_id)" value="Enviar">
                 </div>
             </div>
         </div>
