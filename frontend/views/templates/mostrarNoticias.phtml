@@ -4,7 +4,7 @@
     <article class="noticia p-5 mb-5" ng-repeat="new in news">
         <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-long-arrow-alt-left fa-lg text-dark"></i></a>
 
-        <h1 class="text-center" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
+        <h1 class="text-center letraNoticia" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
         <hr class="px-5">
 
         <form class="calificacion">
@@ -21,7 +21,7 @@
         </form>
 
         <!-- imagen usuario | categoria noticia | fecha creacion -->
-        <span class=""><img class="rounded-circle mb-1" src="../backend/assets/{{new.user_image}}" width="32px"
+        <span class="letraNegra"><img class="rounded-circle mb-1" src="../backend/assets/{{new.user_image}}" width="32px"
                 height="32px"> | {{new.category_name}} | {{new.new_timestamp}}
         </span>
         
@@ -31,22 +31,22 @@
         </div>
 
         <!-- cuerpo noticia -->
-        <p class="text-left">{{new.new_body}}</p>
+        <p class="text-left letraNegra">{{new.new_body}}</p>
 
         <!-- Sección de comentarios -->
         <hr class="px-5">
         <div class="content mb-1">
             <!-- expande comentarios -->
             
-            <button class="btn expandComments bg-transparent" type="button" onclick="expandComments(this)"><i class="far fa-comment-alt mr-1"></i>Comentar</button>
+            <button class="btn expandComments bg-transparent letraNegra" type="button" onclick="expandComments(this)"><i class="far fa-comment-alt mr-1"></i>Comentar</button>
 
             <div class="content d-inline commentsBox">
 
                 <!-- comentarios -->
                 <div class="container mt-3 d-none" ng-repeat="comment in new.comments">
-                    <span class="font-weight-bold">{{comment.user_fullname}}</span>
-                    <span>{{comment.comment_timestamp}}</span>
-                    <p>{{comment.comment_text}}</p>
+                    <span class="font-weight-bold letraNegra">{{comment.user_fullname}}</span>
+                    <span class="letraNegra">{{comment.comment_timestamp}}</span>
+                    <p class="letraNegra">{{comment.comment_text}}</p>
                 </div>
 
                 <!-- campo para comentar -->

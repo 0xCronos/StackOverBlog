@@ -1,28 +1,78 @@
 
 var barraIzquierdaActiva = true;
 var tamaño = 16; //fuente tamaño 16, ocupado en la funcion cambiarTexto()
+var tamaño2 = 20;
+var tamaño3 = 16;
+var tamaño4 = 40;
+var tamaño5 = 24;
 var activo = 1;	//Bandera, ocupado en la funcion cambiarFondo()
 
 function cambiarTexto(valor){
-	tamaño = tamaño + valor;
-	$("body").css("font-size", tamaño);
+    tamaño = tamaño + valor;
+    tamaño2 = tamaño2 + valor;
+    tamaño3 = tamaño3 + valor;
+    tamaño4 = tamaño4 + valor;
+    tamaño5 = tamaño5 + valor;
+    $("body").css("font-size", tamaño);
+    $(".letraBlanca").css("font-size",tamaño);
+    $(".letraIzquierda").css("font-size",tamaño2);
+    $(".letraSuperior").css("font-size",tamaño3);
+    $(".letraNoticia").css("font-size",tamaño4);
+    $(".letraDerecha").css("font-size",tamaño5);
 }
 
 function cambiarfondo(){
-	if(activo){
-		$("body").css("background-color", "black");
-		$('body').css("transition", "2s");
-		$("body").css("color", "white");
-		activo = 0;
+    if(activo){
+        
+     $("body").css("background","#4b6cb7");
+     $("body").css("background","-webkit-linear-gradient(to right, #182848, #4b6cb7)");
+     $("body").css("background","linear-gradient(to right, #182848, #4b6cb7)");
 
-	}else{
-		$("body").css("background-color", "white");
-		$('body').css("transition", "2s");
-		$("body").css("color", "black");
-		activo = 1;
-	}
+     $(".barraSuperior").css("background","#232526");
+     $(".barraSuperior").css("background","-webkit-linear-gradient(to right, #414345, #232526)");
+     $(".barraSuperior").css("background","linear-gradient(to right, #414345, #232526)");    
+
+
+     $(".barraIzquierda").css("background","#485563");
+     $(".barraIzquierda").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
+     $(".barraIzquierda").css("background","linear-gradient(to bottom, #29323c, #485563)");
+
+
+     $(".barraDerecha").css("background","#485563");
+     $(".barraDerecha").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
+     $(".barraDerecha").css("background","linear-gradient(to bottom, #29323c, #485563)");
+
+
+     $(".seccionNoticia").css("background","#2b5876");
+     $(".seccionNoticia").css("background","-webkit-linear-gradient(to right, #4e4376, #2b5876)");
+     $(".seccionNoticia").css("background","linear-gradient(to right, #4e4376, #2b5876)");
+
+
+     $(".noticia").css("background","#485563");
+     $(".noticia").css("background","-webkit-linear-gradient(to right, #29323c, #485563");
+     $(".noticia").css("background","linear-gradient(to right, #29323c, #485563)");
+
+
+     $(".letraBlanca").css("color","#EEE");
+     $(".letraNegra").css("color","#EEE");
+     $(".letraNoticia").css("color","#EEE");
+     activo=0;
+
+    }else{
+      
+      $("body").css("background","radial-gradient(circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2%)"); 
+      $(".barraSuperior").css("background","linear-gradient( 99.6deg,  rgba(112,128,152,1) 10.6%, rgba(242,227,234,1) 32.9%, rgba(234,202,213,1) 52.7%, rgba(220,227,239,1) 72.8%, rgba(185,205,227,1) 81.1%, rgba(154,180,212,1) 102.4% )");
+      $(".barraIzquierda").css("background","radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% )");
+      $(".barraDerecha").css("background","radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% )");
+      $(".seccionNoticia").css("background","linear-gradient(to right, #ff4b1f 0%, #ff9068 51%, #ff4b1f 100%)");
+      $(".noticia").css("background","white");
+      
+      $(".letraBlanca").css("color","white");
+      $(".letraNegra").css("color","black");
+      $(".letraNoticia").css("color","black");
+      activo=1;
+    }    
 }
-
 function botonBarraIzquierda(){
 	if(barraIzquierdaActiva){
 		$('.barraIzquierda').css("display", "none");
