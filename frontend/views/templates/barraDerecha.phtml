@@ -2,21 +2,19 @@
 <div class="container-fluid" ng-controller="controladorBarraDerecha">
 
     <!-- nombre -->
-    <h3 class="text-center small mt-3">Acerca del creador</h3>
+    <h3 class="text-center small">Acerca del creador</h3>
     <h1 class="text-center text-white h4 p-2 letraDerecha">{{owner.user_fullname}}</h1>
 
     <!-- imagen -->
     <div class="text-white text-center mb-5 mb-5">
-        <a href="/cursos/tienda-flutter-laravel">
-            <img src="../backend/assets{{owner.user_image}}" loading="lazy" class="img-fluid mx-auto d-block">
-        </a>
+        <img src="../backend/assets{{owner.user_image}}" loading="lazy" class="img-fluid mx-auto d-block">
 
         <!-- descripcion-->
         <h3 class="text-white mt-3 d-block text-center small font-italic">
-            “{{owner.user_description}}”
+            “{{owner.user_description.substr(0, 128)}}...”
         </h3>
 
-        <a href="perfil.html" title="2" class="p-1 d-block text-right small text-decoration-none">Mas acerca de mi...</a>
+        <a href="index.php?pagina=perfil&id={{owner.user_id}}" title="2" class="p-1 d-block text-right small text-decoration-none">Ver mas...</a>
 
         <hr class="bg-light">
         <!-- SECCION DE NOTICAS + VALORADAS, falta por completar-->
