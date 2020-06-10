@@ -3,8 +3,8 @@ app.controller('controladorInicio', function($scope, $http){
     $scope.targetingNew = false;
     $scope.news = [];
 
-    $scope.user_id;
     //carga usuario logeado    
+    $scope.user_id;
     $http.get("../backend/controllers/getCurrentUserIdCtr.php")
     .then(function (response) {
         $scope.user_id = response.data.user_id;
@@ -56,6 +56,12 @@ app.controller('controladorInicio', function($scope, $http){
     $scope.comentar = function(id){
         console.log($scope.user_id)
         console.log(id)
+
+        if($scope.user_id == 0){
+            alert("Inicia sesión primero!");
+            return;
+        }
+
         $.ajax({
             url: '../backend/controllers/addCommentCtr.php',
             type: 'POST',
@@ -74,8 +80,9 @@ app.controller('controladorNoticias', function($scope, $http){
     $scope.section = ""
     $scope.targetingNew = false;
     $scope.news = [];
-     $scope.user_id;
+    
     //carga usuario logeado    
+    $scope.user_id;
     $http.get("../backend/controllers/getCurrentUserIdCtr.php")
     .then(function (response) {
         $scope.user_id = response.data.user_id;
@@ -127,6 +134,12 @@ app.controller('controladorNoticias', function($scope, $http){
     $scope.comentar = function(id){
         console.log($scope.user_id)
         console.log(id)
+
+        if($scope.user_id == 0){
+            alert("Inicia sesión primero!");
+            return;
+        }
+
         $.ajax({
             url: '../backend/controllers/addCommentCtr.php',
             type: 'POST',
@@ -251,7 +264,22 @@ app.controller('controladorCrudNoticias', function($scope, $http){
 
 app.controller('controladorCrudCategorias', function($scope, $http){
     $scope.categories = [];
-    
+   
+    $scope.modificarCategoria = function(id){
+        var conexion = "#c-" + id;
+        var nombre  = $(conexion).val();
+        console.log("category_id="+id+"&category_name="+nombre);
+        $.ajax({
+            url: '../backend/controllers/modifyCategoryCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: "category_id="+id+"&category_name="+nombre
+        })
+        .done(function (data) {
+            window.location.reload();
+        })
+    }
+
     $scope.deleteCategory = function(id) {
         var elemento = "."+ id;
         $.ajax({

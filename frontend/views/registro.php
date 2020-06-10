@@ -1,8 +1,8 @@
-<?php if ($userSession->checkSession()) header("location: index.php?pagina=inicio");?>
+<?php if ($userSession->checkSession()) header("location: index.php?pagina=inicio"); ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 p-0">
-                <?php require_once "views/templates/barraIzquierda.phtml";?>
+            <?php require_once "views/templates/barraIzquierda.phtml"; ?>
         </div>
         <div class="col-lg-10 contenedorPrincipal">
             <div class="container">
@@ -13,8 +13,7 @@
                                 <h3 class="text-center text-dark mb-3"> Registrarse</h3>
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo (visible para todos)</label>
-                                    <input id="nombre" type="name" class="form-control"
-                                        placeholder="Ingresa tu nombre completo o un alias" name="fullname">
+                                    <input id="nombre" type="name" class="form-control" placeholder="Ingresa tu nombre completo o un alias" name="fullname">
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensaje1">Llenar campo nombre</div>
 
@@ -31,18 +30,22 @@
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensaje3">Llenar campo contraseña</div>
                                 <div class="error alert alert-danger" role="alert" id="mensajePw">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
-                                NO puede tener otros símbolos.</div>
+                                    NO puede tener otros símbolos.</div>
 
-                                <div class="form-group">
-                                    <label for="image">Foto de perfil</label>
-                                    <input type="file" class="form-control-file" name="image" accept="image/*">
+
+                                <div class="input-group mb-3 mt-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Foto de perfil</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input form-control-file" name="image" accept="image/*">
+                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                    </div>
                                 </div>
-
 
                                 <div class="form-group">
                                     <label for="description">Descripción</label>
-                                    <textarea id="description" class="form-control" rows="3" placeholder="Escribe sobre ti..."
-                                        name="description"></textarea>
+                                    <textarea id="description" class="form-control" rows="3" placeholder="Escribe sobre ti..." name="description"></textarea>
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensaje4">Llenar campo descripcion con maximo 2048 caracteres</div>
 
@@ -50,7 +53,7 @@
                                 <!-- BOTON -->
                                 <div class="form-group text-center">
                                     <input id="registerResponse" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Registrarse">
-                                    <span class="text-danger" ></span>
+                                    <span class="text-danger"></span>
                                 </div>
                             </form>
                         </div>
