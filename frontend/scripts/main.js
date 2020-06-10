@@ -66,7 +66,7 @@ $(document).ready(function(){
         .done(function (data) {
             console.log(data);
             if(data == "user"){
-                window.location = "blog-prod/";
+                window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
                 window.location = "/blog-prod/frontend/index.php?pagina=administrador";
                 
@@ -84,12 +84,20 @@ $(document).ready(function(){
         var form = $('#createNewForm')[0];
         var data = new FormData(form);
         $.ajax({
+<<<<<<< Updated upstream
             url: '../backend/controllers/addNewCtr.php',
             method: 'POST',
             enctype: 'multipart/form-data',
             processData: false,
             contentType: false,
             data: data
+=======
+            url: '../backend/controllers/addContactCtr.php',
+            type: 'POST',
+            dataType: 'text',
+            data: $(".contactForm").serialize()
+
+>>>>>>> Stashed changes
         })
         .done(function(data){
             console.log(data);
