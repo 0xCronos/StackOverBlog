@@ -23,6 +23,16 @@ function cambiarfondo(){
 	}
 }
 
+function botonBarraIzquierda(){
+	if(barraIzquierdaActiva){
+		$('.barraIzquierda').css("display", "none");
+		barraIzquierdaActiva = false;
+	}else{
+		$('.barraIzquierda').css("display", "inline");
+		barraIzquierdaActiva = true;
+	}
+}
+
 function expandComments(obj){
     var commentsBox = $(obj).next(commentsBox);
     if(commentsBox.children().hasClass("d-none")){
@@ -56,22 +66,23 @@ $(document).ready(function(){
         .done(function (data) {
             console.log(data);
             if(data == "user"){
-                window.location = "blog-prod/";
+                window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
-                window.location = "../frontend/index.php?pagina=administrador";
+                window.location = "index.php?pagina=administrador";
                 
             }else{
+                alert("no funciona");
                 $("input[type=password]").val('');
-                $("#loginResponse").html("Nombre de usuario y/o contraseña incorrecto");
+                $("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })
 
-    //AJAX ENVIAR CONTACTO
+   //AJAX ENVIAR CONTACTO
     $(".contactForm").submit(function (e) {
         e.preventDefault();
         $.ajax({
-            url: '/blog-prod/backend/controllers/addContactCtr.php',
+            url: '../backend/controllers/addContactCtr.php',
             type: 'POST',
             dataType: 'text',
             data: $(".contactForm").serialize()
@@ -84,7 +95,10 @@ $(document).ready(function(){
                 alert(data);
             }
         })
-    })
+    }) 
+
+    //abre o cierra barra lateral izquierda
+	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());
 
 	//llama a la etiqueta #mas y va a leer el elemento click
 	$("#mas").click(function(){

@@ -72,7 +72,7 @@ function validateInput($title, $body){
     if(strlen($title) < 4 || strlen($title) > 45){
         return "Campo titulo no cumple con los requisitos.";
     }
-    if(strlen($body) < 100 || strlen($body) > 2048){
+    if(strlen($body) < 1 || strlen($body) > 2048){
         return "Campo cuerpo noticia no cumple con los requisitos";
     }
     return "";

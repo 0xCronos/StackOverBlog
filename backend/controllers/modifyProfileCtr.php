@@ -75,7 +75,7 @@ if(isset($_POST['user_id'])){
 
                 //borra imagen antigua de los archivos si no es la imagen por defecto
                 $oldImagePath = '../assets'.$user->getImagePathOfUser($user_id);
-                if($oldImagePath != "../assets/profiles-images/default.jpg"){
+                if($oldImagePath != "../assets/profiles-images/default.png"){
                     unlink($oldImagePath);
                 }
             }else{

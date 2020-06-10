@@ -43,7 +43,7 @@ if(isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['password
                 exit;
             }
         }else{ //inserta imagen por defecto si no se especifica una
-            $fileName = "default.jpg";
+            $fileName = "default.png";
         }
 
         if($user->addUser($fullname, $email, $password, "/profiles-images/".$fileName, $description)){
