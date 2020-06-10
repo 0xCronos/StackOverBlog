@@ -153,8 +153,8 @@ class News extends Database{
 
         try{
             $res->execute([
-                'title' => $title,
-                'body' => $body,
+                'title' => ucfirst(strtolower($title)),
+                'body' => ucfirst(strtolower($body)),
                 'image' => $image,
                 'state_id' => $state_id,
                 'category_id' => $category_id,
@@ -179,8 +179,8 @@ class News extends Database{
             $res = $this->connect()->prepare($query);
 
             $res->execute([
-                'title' => $title,
-                'body' => $body,
+                'title' => ucfirst(strtolower($title)),
+                'body' => ucfirst(strtolower($body)),
                 'image' => $image,
                 'state_id' => $state_id,
                 'category_id' => $category_id,

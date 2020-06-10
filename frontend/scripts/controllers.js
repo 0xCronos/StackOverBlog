@@ -1,5 +1,5 @@
 app.controller('controladorInicio', function($scope, $http){
-    $scope.section = "Ultimas noticias"
+    $scope.section = ""
     $scope.targetingNew = false;
     $scope.news = [];
 
@@ -15,6 +15,7 @@ app.controller('controladorInicio', function($scope, $http){
 
     $scope.loadLastNews = function(amount){
         $scope.targetingNew = false;
+        $scope.section = "Ultimas noticias"
         $http.get("../backend/controllers/getNewsCtr.php?amount="+amount)
         .then(function (response){
             $scope.news = response.data;
@@ -25,6 +26,7 @@ app.controller('controladorInicio', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response){
@@ -69,7 +71,7 @@ app.controller('controladorInicio', function($scope, $http){
 });
 
 app.controller('controladorNoticias', function($scope, $http){
-    $scope.section = "Noticias"
+    $scope.section = ""
     $scope.targetingNew = false;
     $scope.news = [];
      $scope.user_id;
@@ -83,6 +85,7 @@ app.controller('controladorNoticias', function($scope, $http){
     });
 
     $scope.loadAllNews = function(){
+        $scope.section = "Noticias"
         $scope.targetingNew = false;
         $http.get("../backend/controllers/getNewsCtr.php")
         .then(function (response) {
@@ -94,6 +97,7 @@ app.controller('controladorNoticias', function($scope, $http){
     }
 
     $scope.targetNew = function(id){
+        $scope.section = ""
         $scope.targetingNew = true;
         $http.get("../backend/controllers/getNewsCtr.php?id="+id)
         .then(function (response) {
@@ -129,7 +133,7 @@ app.controller('controladorNoticias', function($scope, $http){
             dataType: 'text',
             data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
         })
-        .done(function (data) {
+        .done(function(data){
             window.location.reload();
         })
     }
@@ -140,9 +144,9 @@ app.controller('controladorNoticias', function($scope, $http){
 app.controller("controladorNuevaNoticia",function($scope, $http){
     $scope.categorias = [];
     $http.get("../backend/controllers/getCategoriesCtr.php")
-        .then(function (response) {
-            $scope.categorias = response.data;
-        })
+    .then(function(response){
+        $scope.categorias = response.data;
+    })
 })
 
 app.controller('controladorCrudNoticias', function($scope, $http){
@@ -151,7 +155,7 @@ app.controller('controladorCrudNoticias', function($scope, $http){
 
     $http.get("../backend/controllers/getCategoriesCtr.php")
         .then(function (response) {
-                $scope.categorias = response.data;
+            $scope.categorias = response.data;
         })
 
 
@@ -162,10 +166,9 @@ app.controller('controladorCrudNoticias', function($scope, $http){
             dataType: 'text',
             data: "comment_id="+id
         })
-            .done(function (data) {
-                console.log(data);
-                window.location.reload();
-            })
+        .done(function (data) {
+            window.location.reload();
+        })
 
     }
 
@@ -189,9 +192,9 @@ app.controller('controladorCrudNoticias', function($scope, $http){
             dataType: 'text',
             data: $(elemento).serialize()
         })
-            .done(function (data) {
-                window.location.reload();
-            })
+        .done(function (data) {
+            window.location.reload();
+        })
     }
 
     //AJAX CREAR NOTICIA
@@ -300,13 +303,12 @@ app.controller('controladorCrudContactos', function($scope, $http){
 
         $scope.contactos = [];
         $http.get("../backend/controllers/getContactsCtr.php")
-            .then(function (response) {
-                    console.log(response.data);
-                    $scope.contactos = response.data;
-                }
-                ,function(error){
-                    console.warn(error);
-                })
+        .then(function (response) {
+            scope.contactos = response.data;
+        }
+        ,function(error){
+            console.warn(error);
+        })
 
         $scope.eliminarContacto = function (id) {
             var elemento = "."+ id;
@@ -316,10 +318,10 @@ app.controller('controladorCrudContactos', function($scope, $http){
                 dataType: 'text',
                 data: $(elemento).serialize()
             })
-                .done(function (data) {
-                    window.location.reload();
+            .done(function (data) {
+                window.location.reload();
 
-                })
+            })
         }
     })
 })
@@ -342,7 +344,6 @@ app.controller('controladorBarraDerecha', function($scope, $http){
         $http.get("../backend/controllers/get5BestRatedNewsCtr.php")
         .then(function (response){
             $scope.bestRatedNews = response.data;
-            console.log($scope.bestRatedNews);
         }
         ,function(error){
             console.warn(error);
@@ -352,3 +353,17 @@ app.controller('controladorBarraDerecha', function($scope, $http){
     $scope.loadOwner();
     $scope.loadBestRatedNews();
 })
+
+app.controller('controladorPerfil', function($scope, $http){
+    $scope.userData = [];
+
+    $scope.loadProfile = function(id){
+        $http.get("../backend/controllers/getProfileCtr.php?user_id="+id)
+        .then(function (response){
+            $scope.userData = response.data;
+        }
+        ,function(error){
+            console.warn(error);
+        })
+    }
+});

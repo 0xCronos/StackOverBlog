@@ -7,8 +7,8 @@ require_once "../models/utils.php";
 $user = new User();
 $utils = new Utils();
 
-if(isset($_POST['user_id'])){
-    $user_id = $_POST['user_id'];
+if(isset($_GET['user_id'])){
+    $user_id = $_GET['user_id'];
 
     if(is_numeric($user_id) && $user_id > 0){
         $data = $user->getUserById($user_id);
