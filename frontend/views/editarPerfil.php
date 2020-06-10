@@ -13,9 +13,8 @@
                             <form method="POST" class="editar_perfil" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Actualizar Perfil</h3>
 
-                                <div ng-hide="true" class="form-group">
-                                    <label for="id">ID</label>
-                                    <input type="text" class="form-control" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                                 </div>
 
                                 <div class="form-group">

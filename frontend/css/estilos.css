@@ -153,6 +153,7 @@ input[name="estrellas"] {
     margin-right: 500px;
     padding: 10px;
     position: absolute;
+    z-index: 10;
 }
 .fotoEditarPerfil{
     width:30%;
