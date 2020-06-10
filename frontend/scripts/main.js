@@ -23,6 +23,16 @@ function cambiarfondo(){
 	}
 }
 
+function botonBarraIzquierda(){
+	if(barraIzquierdaActiva){
+		$('.barraIzquierda').css("display", "none");
+		barraIzquierdaActiva = false;
+	}else{
+		$('.barraIzquierda').css("display", "inline");
+		barraIzquierdaActiva = true;
+	}
+}
+
 function expandComments(obj){
     var commentsBox = $(obj).next(commentsBox);
     if(commentsBox.children().hasClass("d-none")){
@@ -56,35 +66,53 @@ $(document).ready(function(){
         .done(function (data) {
             console.log(data);
             if(data == "user"){
-                window.location = "blog-prod/";
+                window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
-                window.location = "../frontend/index.php?pagina=administrador";
+                window.location = "/blog-prod/frontend/index.php?pagina=administrador";
                 
             }else{
+                alert("no funciona");
                 $("input[type=password]").val('');
-                $("#loginResponse").html("Nombre de usuario y/o contraseña incorrecto");
+                $("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })
 
-    //AJAX ENVIAR CONTACTO
-    $(".contactForm").submit(function (e) {
+    //AJAX CREAR NOTICIA
+    $("#createNewForm").submit(function(e){
         e.preventDefault();
+        var form = $('#createNewForm')[0];
+        var data = new FormData(form);
         $.ajax({
-            url: '/blog-prod/backend/controllers/addContactCtr.php',
+<<<<<<< Updated upstream
+            url: '../backend/controllers/addNewCtr.php',
+            method: 'POST',
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            data: data
+=======
+            url: '../backend/controllers/addContactCtr.php',
             type: 'POST',
             dataType: 'text',
             data: $(".contactForm").serialize()
 
+>>>>>>> Stashed changes
         })
-        .done(function (data) {
-            if(data == "1"){
-                alert("Enviado");
+        .done(function(data){
+            console.log(data);
+            if(data == "noticia agregada con exito"){
+                alert("noticia agregada con exito");
+                window.location.reload();
             }else{
-                alert(data);
+                alert("no funciona");
+                //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
             }
         })
     })
+
+    //abre o cierra barra lateral izquierda
+	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());
 
 	//llama a la etiqueta #mas y va a leer el elemento click
 	$("#mas").click(function(){
