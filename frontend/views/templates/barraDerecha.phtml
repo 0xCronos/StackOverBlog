@@ -1,6 +1,6 @@
 <!-- **** barra derecha: datos dueño del blog **** -->
 <div class="container-fluid" ng-controller="controladorBarraDerecha">
-    
+
     <!-- nombre -->
     <h3 class="text-center small mt-3">Acerca del creador</h3>
     <h1 class="text-center text-white h4 p-2">{{owner.user_fullname}}</h1>
@@ -22,10 +22,10 @@
         <!-- SECCION DE NOTICAS + VALORADAS, falta por completar-->
         <h4 class="text-white p-1 d-block text-center small">Noticias mejores calificadas</h4>
 
-        <a href="#">noticia 1</a><br>
-        <a href="#">noticia 2</a><br>
-        <a href="#">noticia 3</a><br>
-        <a href="#">noticia 4</a><br>
-        <a href="#">noticia 5</a><br>
+        <ul class="list-group" ng-repeat="bestRatedNew in bestRatedNews">
+            <li class="list-group-item bg-transparent" ng-click="targetNew(bestRatedNew.new_id)" style="cursor: pointer;">
+                <a class="text-decoration-none text-white text-left">{{$index +1}}.- {{bestRatedNew.new_title}}</a>
+            </li>
+        </ul>
     </div>
 </div>
