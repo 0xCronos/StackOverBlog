@@ -112,6 +112,14 @@ input[name="estrellas"] {
     color: #fff;
 }
 
+.fotoBarraDerecha{
+    margin-top: 40px;
+    height: auto;
+    width: 350px;
+    border-radius: 2%;
+    border: 3px solid #3B240A;
+}
+
 @media(max-width:1000px){
 	.perfil{
 		display: none;
