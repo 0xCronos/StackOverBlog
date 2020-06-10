@@ -66,8 +66,6 @@ app.controller("controladorNuevaNoticia",function($scope, $http){
 
 app.controller('controladorCrudNoticias', function($scope, $http){
     $scope.news = [];
-<<<<<<< Updated upstream
-=======
     $scope.categorias = [];
 
     $http.get("../backend/controllers/getCategoriesCtr.php")
@@ -76,7 +74,6 @@ app.controller('controladorCrudNoticias', function($scope, $http){
         })
 
 
->>>>>>> Stashed changes
     $scope.loadAllNews = function(){
         $http.post("../backend/controllers/getNewsCtr.php")
         .then(function(response){
@@ -87,15 +84,8 @@ app.controller('controladorCrudNoticias', function($scope, $http){
         })
     }
     $scope.loadAllNews();
-<<<<<<< Updated upstream
-});
-
-app.controller('controladorCrudCategorias', function($scope, $http){
-
-=======
 
     //AJAX ELIMINAR NOTICIA
-
     $scope.eliminarNoticia = function (id) {
         var elemento = ".idNoticia-"+ id;
         $.ajax({
@@ -137,33 +127,28 @@ app.controller('controladorCrudCategorias', function($scope, $http){
     });
 
     //AJAX MODIFICAR NOTICIA
+    $scope.actualizarNoticia = function(id) {
+        var formEspecifico = ".noticia-" + id;
+        var form = $(formEspecifico)[0];
+        var dataTransformado = new FormData(form);
+        console.log(dataTransformado);
+        $.ajax({
+            url: "../backend/controllers/modifyNewCtr.php",
+            method: "POST",
+            enctype: "multipart/form-data",
+            processData: false,
+            contentType: false,
+            data: dataTransformado
+        })
+        .done(function (data) {
+            if(data!="1"){
+                alert(data);
+            }else{
+                window.location.reload();
+            }
 
-        $scope.actualizarNoticia = function(id) {
-            var formEspecifico = ".noticia-" + id;
-            var form = $(formEspecifico)[0];
-            var dataTransformado = new FormData(form);
-            console.log(dataTransformado);
-            $.ajax({
-                url: "../backend/controllers/modifyNewCtr.php",
-                method: "POST",
-                enctype: "multipart/form-data",
-                processData: false,
-                contentType: false,
-                data: dataTransformado
-            })
-            .done(function (data) {
-                if(data!="1"){
-                    alert(data);
-                }else{
-                    window.location.reload();
-                }
-
-            })
-
-        }
-
-
-
+        })
+    }
 });
 
 app.controller('controladorCrudCategorias', function($scope, $http){
@@ -213,14 +198,12 @@ app.controller('controladorCrudCategorias', function($scope, $http){
         })
     })
     $scope.getCategories();
->>>>>>> Stashed changes
 });
 
 app.controller('controladorCrudContactos', function($scope, $http){
     $(document).ready(function () {
 
-        $scope.contactos = [
-        ];
+        $scope.contactos = [];
         $http.get("../backend/controllers/getContactsCtr.php")
             .then(function (response) {
                     console.log(response.data);

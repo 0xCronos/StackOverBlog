@@ -1,3 +1,4 @@
+<?php if ($userSession->checkSession()) header("location: index.php?pagina=inicio"); ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 p-0">

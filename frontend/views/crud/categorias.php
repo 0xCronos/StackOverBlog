@@ -4,7 +4,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Categoría</th>
-                <th scope="col"></th>
+                <th scope="col">Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -12,7 +12,7 @@
                 <input type="hidden" name="category_id" value="{{category.category_id}}" class="{{category.category_id}}">
                 <td scope="row">{{category.category_id}}</td>
                 <td>{{category.category_name}}</td>
-                <td><i class="far fa-trash-alt eliminar" ng-click="deleteCategory(category.category_id)"></i></td>
+                <td><i class="far fa-trash-alt eliminar" style="cursor: pointer;" ng-click="deleteCategory(category.category_id)"></i></td>
             </tr>
         </tbody>
     </table>
