@@ -152,12 +152,15 @@ $(document).ready(function(){
             contentType: false,
             data: data
         })
-            .done(function (data) {
-                if(data=="usuario creado con exito"){
-                    alert(data);
-                }
+        .done(function (data) {
+            if(data=="usuario creado con exito"){
+                alert(data);
+                window.location.assign("index.php?pagina=login");
+            }else{
+                alert(data);
+            }
 
-            })
+        })
     })
 
     //AJAX ENVIAR CONTACTO
@@ -173,6 +176,7 @@ $(document).ready(function(){
         .done(function (data) {
             if(data == "1"){
                 alert("Enviado");
+                window.location.reload();
             }else{
                 alert(data);
             }

@@ -64,7 +64,7 @@ if($userSession->checkUserPrivileges()){
 }
 
 function validateInput($title, $body){
-    if(strlen($title) < 4 || strlen($title) > 120){
+    if(strlen($title) < 1 || strlen($title) > 120){
         return "El titulo no cumple con los requisitos";
     }
     if(strlen($body) < 1 || strlen($body) > 2048){

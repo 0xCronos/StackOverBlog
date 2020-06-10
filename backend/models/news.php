@@ -168,6 +168,7 @@ class News extends Database{
 
     //Actualiza noticia con el id ingresado
     public function modifyNew($new_id, $title, $body, $image=null, $state_id, $category_id){
+        
         //comprueba que exista una noticia con el id ingresado
         if(!$this->getNew($new_id)) return false;
 
@@ -178,31 +179,38 @@ class News extends Database{
                       WHERE new_id = :new_id";
             $res = $this->connect()->prepare($query);
 
-            $res->execute([
-                'title' => $title,
-                'body' => $body,
-                'image' => $image,
-                'state_id' => $state_id,
-                'category_id' => $category_id,
-                'new_id' => $new_id
-            ]);
+            try{
+                $res->execute([
+                    'title' => $title,
+                    'body' => $body,
+                    'image' => $image,
+                    'state_id' => $state_id,
+                    'category_id' => $category_id,
+                    'new_id' => $new_id
+                ]);
+                return true;
+            }catch(PDOException $e){
+                return false;
+            }
 
-            return true;
         }else{ //se deja la misma imagen
-            $query = "UPDATE news
+            $query = "UPDATE news 
                       SET new_title = :title, new_body = :body, state_id = :state_id, category_id = :category_id
                       WHERE new_id = :new_id";
             $res = $this->connect()->prepare($query);
 
-            $res->execute([
-                'title' => $title,
-                'body' => $body,
-                'state_id' => $state_id,
-                'category_id' => $category_id,
-                'new_id' => $new_id
-            ]);
-
-            return true;
+            try{
+                $res->execute([
+                    'title' => $title,
+                    'body' => $body,
+                    'state_id' => $state_id,
+                    'category_id' => $category_id,
+                    'new_id' => $new_id
+                ]);
+                return true;
+            }catch(PDOException $e){
+                return false;
+            }
         }
     }
 

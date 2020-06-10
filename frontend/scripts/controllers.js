@@ -54,8 +54,8 @@ app.controller('controladorInicio', function($scope, $http){
     }
         
     $scope.comentar = function(id){
-        console.log($scope.user_id)
-        console.log(id)
+        // console.log($scope.user_id)
+        // console.log(id)
 
         if($scope.user_id == 0){
             alert("Inicia sesión primero!");
@@ -69,7 +69,8 @@ app.controller('controladorInicio', function($scope, $http){
             data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
         })
         .done(function (data) {
-            window.location.reload();
+            // alert("comentario enviado");
+            $scope.targetNew(id);
         })
     }
         
@@ -132,8 +133,8 @@ app.controller('controladorNoticias', function($scope, $http){
     }
         
     $scope.comentar = function(id){
-        console.log($scope.user_id)
-        console.log(id)
+        // console.log($scope.user_id)
+        // console.log(id)
 
         if($scope.user_id == 0){
             alert("Inicia sesión primero!");
@@ -147,7 +148,8 @@ app.controller('controladorNoticias', function($scope, $http){
             data: "user_id="+$scope.user_id+"&new_id="+id+"&comment_text="+$(".caja-comentarios-"+id).val()
         })
         .done(function(data){
-            window.location.reload();
+            // alert("comentario enviado");
+            $scope.targetNew(id);
         })
     }
 
@@ -180,7 +182,10 @@ app.controller('controladorCrudNoticias', function($scope, $http){
             data: "comment_id="+id
         })
         .done(function (data) {
-            window.location.reload();
+            if(data == 1){
+                alert("Comentario borrado");
+                window.location.reload();
+            }
         })
 
     }
@@ -240,6 +245,7 @@ app.controller('controladorCrudNoticias', function($scope, $http){
     //AJAX MODIFICAR NOTICIA
     $scope.actualizarNoticia = function(id) {
         var formEspecifico = ".noticia-" + id;
+        console.log(formEspecifico);
         var form = $(formEspecifico)[0];
         var dataTransformado = new FormData(form);
         console.log(dataTransformado);
@@ -255,10 +261,13 @@ app.controller('controladorCrudNoticias', function($scope, $http){
             if(data!="1"){
                 alert(data);
             }else{
+                alert(data);
                 window.location.reload();
             }
-
         })
+        // .fail(function(error){
+        //     console.warn(error);
+        // });
     }
 });
 
@@ -400,12 +409,11 @@ app.controller("modificarPerfil",function ($scope,$http) {
 
     $("form.editar_perfil").submit(function () {
 
-
         var formEspecifico = $(".editar_perfil")[0];
-        console.log($(".editar_perfil")[0]);
+        // console.log($(".editar_perfil")[0]);
         var form = $(formEspecifico)[0];
         var dataTransformado = new FormData(form);
-        console.log(dataTransformado);
+        // console.log(dataTransformado);
         $.ajax({
             url: "../backend/controllers/modifyProfileCtr.php",
             method: "POST",
@@ -414,22 +422,14 @@ app.controller("modificarPerfil",function ($scope,$http) {
             contentType: false,
             data: dataTransformado
         })
-            .done(function (data) {
-                if(data!="1"){
-                    alert(data);
-                }else{
-                    window.location.assign("index.php?pagina=miPerfil");
-                }
+        .done(function (data) {
+            if(data != "1"){
+                alert(data);
+            }else{ 
+                alert("Cambios realizados, inicia sesión nuevamente para ver todos los cambios.");
+                window.location.assign("../backend/controllers/logout.php");
+            }
 
-            })
-
-
+        })
     })
-
-
-
-
-
-
-
 })

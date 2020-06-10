@@ -53,7 +53,7 @@ if($userSession->checkUserPrivileges()){
                 if($news->modifyNew($new_id, $new_title, $new_body, $fileName, $state_id, $category_id)){
                     echo "1";
                 }else{
-                    echo "error al crear noticia";
+                    echo "error al modificar noticia";
                 }
             }else{
                 echo $validationMessage;
@@ -69,7 +69,7 @@ if($userSession->checkUserPrivileges()){
 }
 
 function validateInput($title, $body){
-    if(strlen($title) < 4 || strlen($title) > 45){
+    if(strlen($title) < 1 || strlen($title) > 120){
         return "Campo titulo no cumple con los requisitos.";
     }
     if(strlen($body) < 1 || strlen($body) > 2048){

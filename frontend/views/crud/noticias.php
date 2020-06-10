@@ -85,10 +85,9 @@
                         <i class="far fa-trash-alt eliminar" ng-click="eliminarNoticia(new.new_id)"></i>
                     </div>
 
-                    <form method="POST" id="modifyNews" class="noticia-{{new.new_id}}" enctype="multipart/form-data">
+                    <form method="POST" class="noticia-{{new.new_id}} modifyNews" enctype="multipart/form-data">
 
-                        <h2 class="text-center">Modificar noticia id {{new.new_id}}</h2>
-
+                        <h2 class="text-center mb-4">Modificar noticia | ID {{new.new_id}}</h2>
                         <!-- id noticia (oculto) -->
                         <div class="form-group">
                             <input type="hidden" class="form-control idNoticia-{{new.new_id}}" name="new_id" value="{{new.new_id}}">
@@ -108,7 +107,7 @@
                                 <label class="input-group-text" for="category_id">Categoría</label>
                             </div>
                             <select class="custom-select" name="category_id">
-                                <option value="" selected disabled hidden>Elegir categoría</option>
+                                <option value="0" selected disabled hidden>Elegir categoría</option>
                                 <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                             </select>
                         </div>
@@ -182,7 +181,7 @@
                         </div>
                         <!-- BOTON -->
                         <div class="form-group text-center mt-4">
-                            <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Modificar">
+                            <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" ng-click="actualizarNoticia(new.new_id)" value="Modificar">
                             <span class="text-danger" id="registerResponse"></span>
                         </div>
                     </form>
