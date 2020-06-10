@@ -1,10 +1,13 @@
 <div ng-controller="controladorInicio">
-    <div class="container">
-        <div class="row" style="margin-left: 10%;">
-            <div class="col-lg-8 contenedorPrincipal">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2 p-0">
+                <?php require_once "views/templates/barraIzquierda.phtml";?>
+            </div>
+            <div class="col-lg-7 contenedorPrincipal">
                 <?php require_once "views/templates/mostrarNoticias.phtml";?>
             </div>
-            <div class="col-md-4 contenedorPrincipal perfil">
+            <div class="col-lg-3 contenedorPrincipal perfil">
                 <?php require_once "views/templates/perfil.phtml";?>
             </div>
         </div>
