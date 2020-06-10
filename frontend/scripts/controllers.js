@@ -304,7 +304,7 @@ app.controller('controladorCrudContactos', function($scope, $http){
         $scope.contactos = [];
         $http.get("../backend/controllers/getContactsCtr.php")
         .then(function (response) {
-            scope.contactos = response.data;
+            $scope.contactos = response.data;
         }
         ,function(error){
             console.warn(error);

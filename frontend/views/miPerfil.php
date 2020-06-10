@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 p-0">
-            <?php require_once "views/templates/barraIzquierda.phtml"; ?>
+            <?php require_once "views/templates/barraIzquierda.phtml";?>
         </div>
         <div class="col-lg-10 contenedorPrincipal">
             <div class="row">
@@ -15,7 +15,7 @@
                     <p class="lead text-left">
                         <?php echo $_SESSION['user_description']?>
                     </p>
-                    <a class="mt-5" href="editarPerfil.html">Click acá para editar</a>
+                    <a class="mt-5" href="index.php?pagina=editarPerfil">Click acá para editar</a>
                 </div>
             </div>
         </div>
