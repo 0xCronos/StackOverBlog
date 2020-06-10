@@ -19,8 +19,6 @@ $userSession = new UserSession();
     <?php
     require_once "views/templates/barraSuperior.phtml";
 
-    // require_once "views/templates/barraIzquierda.phtml";
-
     //Vistas
     if(isset($_GET['pagina'])){
         if($_GET['pagina'] == "inicio"){
