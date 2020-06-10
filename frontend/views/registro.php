@@ -1,4 +1,4 @@
-<?php if ($userSession->checkSession()) header("location: index.php?pagina=inicio"); ?>
+<?php if ($userSession->checkSession()) header("location: index.php?pagina=inicio");?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 p-0">
@@ -14,7 +14,7 @@
                                 <div class="form-group">
                                     <label for="fullname">Nombre completo (visible para todos)</label>
                                     <input id="nombre" type="name" class="form-control"
-                                        placeholder="Ingresa tu nombre completo o un nombre de usuario" name="fullname">
+                                        placeholder="Ingresa tu nombre completo o un alias" name="fullname">
                                 </div>
                                 <div class="error alert alert-danger" role="alert" id="mensaje1">Llenar campo nombre</div>
 

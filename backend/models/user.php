@@ -49,7 +49,7 @@ class User extends Database{
             'user_email' => $user_email,
             'user_password' => md5($user_password),
             'user_image' => $user_image,
-            'user_description' => $user_description
+            'user_description' => ucfirst(strtolower($user_description))
             ]);
             return true;
         }catch(PDOException $e){
@@ -78,7 +78,7 @@ class User extends Database{
                       SET user_fullname= :user_fullname, user_password = :user_password, user_description = :user_description 
                       WHERE user_id = :user_id";
             $res = $this->connect()->prepare($query);
-            $res->execute(['user_id' => $user_id, 'user_fullname' => $user_fullname, 'user_password' => $user_password, 'user_description' => $user_description]);
+            $res->execute(['user_id' => $user_id, 'user_fullname' => $user_fullname, 'user_password' => $user_password, 'user_description' => ucfirst(strtolower($user_description))]);
             return true;
         }
     }

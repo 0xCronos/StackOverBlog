@@ -11,8 +11,8 @@
                             <form class="contactForm" method="POST">
                                 <h3 class="text-center text-dark">Contacto</h3>
                                 <div class="form-group">
-                                    <label for="fullname">Nombre de usuario (visible para todos)</label>
-                                    <input type="name" class="form-control" placeholder="Ingresa tu nombre completo o un nombre de usuario" name="contact_fullname">
+                                    <label for="fullname">Nombre completo</label>
+                                    <input type="name" class="form-control" placeholder="Ingresa tu nombre completo" name="contact_fullname">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Correo electrónico</label>

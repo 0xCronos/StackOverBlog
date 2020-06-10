@@ -7,7 +7,7 @@
             <div class="col-lg-7 contenedorPrincipal">
                 <?php require_once "views/templates/mostrarNoticias.phtml";?>
             </div>
-            <div class="col-lg-3 contenedorPrincipal perfil">
+            <div class="col-lg-3 perfil">
                 <?php require_once "views/templates/barraDerecha.phtml";?>
             </div>
         </div>

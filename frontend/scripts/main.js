@@ -126,7 +126,7 @@ $(document).ready(function(){
         })
     })
 
-   //AJAX ENVIAR CONTACTO
+    //AJAX ENVIAR CONTACTO
     $(".contactForm").submit(function (e) {
         e.preventDefault();
         $.ajax({
