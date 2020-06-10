@@ -23,25 +23,23 @@ function cambiarTexto(valor){
 
 function cambiarfondo(){
     if(activo){
-        
+
      $("body").css("background","#4b6cb7");
      $("body").css("background","-webkit-linear-gradient(to right, #182848, #4b6cb7)");
      $("body").css("background","linear-gradient(to right, #182848, #4b6cb7)");
 
      $(".barraSuperior").css("background","#232526");
      $(".barraSuperior").css("background","-webkit-linear-gradient(to right, #414345, #232526)");
-     $(".barraSuperior").css("background","linear-gradient(to right, #414345, #232526)");    
+     $(".barraSuperior").css("background","linear-gradient(to right, #414345, #232526)");
 
 
      $(".barraIzquierda").css("background","#485563");
      $(".barraIzquierda").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
      $(".barraIzquierda").css("background","linear-gradient(to bottom, #29323c, #485563)");
 
-
      $(".barraDerecha").css("background","#485563");
      $(".barraDerecha").css("background","-webkit-linear-gradient(to bottom, #29323c, #485563)");
      $(".barraDerecha").css("background","linear-gradient(to bottom, #29323c, #485563)");
-
 
      $(".seccionNoticia").css("background","#2b5876");
      $(".seccionNoticia").css("background","-webkit-linear-gradient(to right, #4e4376, #2b5876)");
@@ -59,19 +57,19 @@ function cambiarfondo(){
      activo=0;
 
     }else{
-      
-      $("body").css("background","radial-gradient(circle 1224px at 10.6% 8.8%,  rgba(255,255,255,1) 0%, rgba(153,202,251,1) 100.2%)"); 
-      $(".barraSuperior").css("background","linear-gradient( 99.6deg,  rgba(112,128,152,1) 10.6%, rgba(242,227,234,1) 32.9%, rgba(234,202,213,1) 52.7%, rgba(220,227,239,1) 72.8%, rgba(185,205,227,1) 81.1%, rgba(154,180,212,1) 102.4% )");
-      $(".barraIzquierda").css("background","radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% )");
-      $(".barraDerecha").css("background","radial-gradient( circle farthest-corner at 10% 20%,  rgba(51,51,81,1) 0%, rgba(34,72,86,1) 90% )");
-      $(".seccionNoticia").css("background","linear-gradient(to right, #ff4b1f 0%, #ff9068 51%, #ff4b1f 100%)");
+
+      $("body").css("background","radial-gradient( circle farthest-corner at 1.3% 2.8%,  rgba(239,249,249,1) 0%, rgba(182,199,226,1) 100.2% )");
+      $(".barraSuperior").css("background","linear-gradient( to left,  rgba(127,113,116,1) 0.1%, rgba(79,70,72,1) 90% )");
+      $(".barraIzquierda").css("background","linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
+      $(".barraDerecha").css("background","linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
+      $(".seccionNoticia").css("background","linear-gradient( to left,  rgba(127,113,116,1) 0.1%, rgba(79,70,72,1) 90% )");
       $(".noticia").css("background","white");
-      
+
       $(".letraBlanca").css("color","white");
       $(".letraNegra").css("color","black");
       $(".letraNoticia").css("color","black");
       activo=1;
-    }    
+    }
 }
 function botonBarraIzquierda(){
 	if(barraIzquierdaActiva){
@@ -119,7 +117,7 @@ $(document).ready(function(){
                 window.location = "../frontend/index.php?pagina=inicio";
             }else if(data == "admin"){
                 window.location = "index.php?pagina=administrador";
-                
+
             }else{
                 alert("no funciona");
                 $("input[type=password]").val('');
@@ -145,7 +143,7 @@ $(document).ready(function(){
                 alert(data);
             }
         })
-    }) 
+    })
 
     //abre o cierra barra lateral izquierda
 	$('#botonBarraIzquierda').click((elem) => botonBarraIzquierda());
