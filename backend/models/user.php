@@ -83,6 +83,17 @@ class User extends Database{
         }
     }
 
+    //muestra datos basicos del dueño del blog
+    public function getOwner(){
+        $query = "SELECT user_id, user_fullname, user_email, user_image, user_description, roles.role_name
+                  FROM users
+                  INNER JOIN roles ON users.role_id=roles.role_id
+                  WHERE role_name = 'admin'";
+        $user = $this->connect()->query($query);
+
+        return ($user->rowCount() > 0) ? $user->fetch(PDO::FETCH_ASSOC) : null;
+    }
+
     public function getImagePathOfUser($id){
         $query = "SELECT user_image FROM users WHERE user_id = :id";
         $res = $this->connect()->prepare($query);

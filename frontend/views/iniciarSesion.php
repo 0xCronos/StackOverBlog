@@ -21,7 +21,7 @@
                                 </div>
                                 <!-- BOTON -->
                                 <div class="form-group text-center">
-                                    <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Conectar">
+                                    <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Conectarse">
                                     <span class="text-danger" id="loginResponse"></span>
                                 </div>
                             </form>

@@ -282,3 +282,31 @@ app.controller('controladorCrudContactos', function($scope, $http){
     })
 })
 
+app.controller('controladorBarraDerecha', function($scope, $http){
+    $scope.owner = {};
+    $scope.bestRatedNews = [];
+
+    $scope.loadOwner = function(){
+        $http.get("../backend/controllers/getOwnerCtr.php")
+        .then(function (response){
+            $scope.owner = response.data;
+        }
+        ,function(error){
+            console.warn(error);
+        })
+    }
+
+    $scope.loadBestRatedNews = function(){
+        $http.get("../backend/controllers/get5BestRatedNewsCtr.php")
+        .then(function (response){
+            $scope.bestRatedNews = response.data;
+            console.log($scope.bestRatedNews);
+        }
+        ,function(error){
+            console.warn(error);
+        })
+    }
+
+    $scope.loadOwner();
+    $scope.loadBestRatedNews();
+})

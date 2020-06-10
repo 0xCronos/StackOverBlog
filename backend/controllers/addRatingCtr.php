@@ -20,7 +20,7 @@ if(isset($_POST['rating_value']) && isset($_POST['new_id'])){
             if(!$rating->UserVoted($new_id, $ip_address)){
 
                 if($rating->addRatingValue($rating_value, $new_id, $ip_address)){
-                    echo $rating->getRatingById($new_id);
+                    echo $rating->getRatingById($new_id)['rating_average'];
                 }else{
                     echo "Envio fallido";
                 }
