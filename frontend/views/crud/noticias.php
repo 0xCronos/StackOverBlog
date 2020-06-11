@@ -10,16 +10,17 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Título</span>
                         </div>
-                        <input type="text" class="form-control" name="new_title">
+                        <input id="tituloCrearNoticia" type="text" class="form-control" name="new_title">
                     </div>
-
+                    <div class="errorCrearNoticia alert alert-danger" role="alert" id="mensajeTitulo1">Introduzca un titulo para la noticia.</div>
                     <!-- categorias-->
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="category_id">Categoría</label>
                         </div>
+
                         <select class="custom-select" name="category_id">
-                            <option value="" selected disabled hidden>Elegir categoría</option>
+                            <option value="" checked disabled hidden>Elegir categoría</option>
                             <option ng-repeat="categoria in categorias" value="{{categoria.category_id}}">{{categoria.category_name}}</option>
                         </select>
                     </div>
@@ -27,8 +28,8 @@
                     <!-- estado -->
                     <div class="form-group">
                         <div class="form-check-inline">
-                            <input class="form-check-input" type="radio" name="state_id" value="1">
-                            <label class="form-check-label" for="public">Público</label>
+                            <input checked class="form-check-input" type="radio" name="state_id" value="1">
+                            <label class="form-check-label " for="public">Público</label>
                         </div>
                         <div class="form-check-inline">
                             <input class="form-check-input" type="radio" name="state_id" value="2">
@@ -43,8 +44,9 @@
                     <!-- cuerpo noticia -->
                     <div class="form-group">
                         <label class="d-inline" for="new_body">Cuerpo de la noticia</label>
-                        <textarea class="form-control" name="new_body" rows="7" placeholder="Ingresa el cuerpo de la noticia..."></textarea>
+                        <textarea id="cuerpoNoticiaCrearNoticia" class="form-control" name="new_body" rows="7" placeholder="Ingresa el cuerpo de la noticia..."></textarea>
                     </div>
+                    <div class="errorTextArea alert alert-danger" role="alert" id="mensajeCuerpoNoticia">Introduzca el cuerpo de la noticia con un maximo de 2048 caracteres.</div>
 
                     <!-- imagen noticia -->
                     <div class="input-group mb-3 mt-4">
@@ -58,8 +60,8 @@
                     </div>
 
                     <div class="form-group text-center mt-4">
-                        <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
-                        <span class="text-danger registerResponse"></span>
+                        <input id="botonCrearNoticia" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Crear noticia">
+                        <span  class="text-danger registerResponse"></span>
                     </div>
                 </form>
             </div>
@@ -98,9 +100,9 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Título</span>
                             </div>
-                            <input type="text" class="form-control" name="new_title" value="{{new.new_title}}">
+                            <input id="modificarTitulo" type="text" class="form-control" name="new_title" value="{{new.new_title}}">
                         </div>
-
+                        <div class="errorCrearNoticia alert alert-danger" role="alert" id="mensajeTituloAModificar">Introduzca un titulo para la noticia.</div>
                         <!-- categorias-->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -113,14 +115,14 @@
                         </div>
 
                         <div class="container">
-                            <p>Categoria actual: {{new.category_name}}</p>
+                            <p>Categoria actual: {{new.category_name}} </p>
                         </div>
 
                         <!-- estado -->
                         <div class="form-group">
                             <div class="form-check-inline">
-                                <input class="form-check-input" required type="radio" name="state_id" value="1">
-                                <label class="form-check-label" for="public">Público</label>
+                                <input   class="form-check-input" required type="radio" name="state_id" value="1">
+                                <label  class="form-check-label" for="public">Público</label>
                             </div>
                             <div class="form-check-inline">
                                 <input class="form-check-input" required type="radio" name="state_id" value="2">
@@ -140,8 +142,9 @@
                         <!-- cuerpo noticia -->
                         <div class="form-group">
                             <label class="d-inline" for="new_body">Cuerpo de la noticia</label>
-                            <textarea class="form-control" name="new_body" rows="14" placeholder="Ingresa el cuerpo de la noticia...">{{new.new_body}}</textarea>
+                            <textarea id="cuerpoNoticiaAModificar" class="form-control" name="new_body" rows="14" placeholder="Ingresa el cuerpo de la noticia...">{{new.new_body}}</textarea>
                         </div>
+                        <div class="errorTextArea alert alert-danger" role="alert" id="mensajeCuerpoNoticiaAModificar">Introduzca el cuerpo de la noticia con un maximo de 2048 caracteres.</div>
 
                         <!-- imagen noticia -->
                         <div class="input-group mb-3 mt-4">
@@ -188,7 +191,7 @@
                         </div>
                         <!-- BOTON -->
                         <div class="form-group text-center mt-4">
-                            <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" ng-click="actualizarNoticia(new.new_id)" value="Modificar">
+                            <input id="botonModificarNoticia" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" ng-click="actualizarNoticia(new.new_id)" value="Modificar">
                             <span class="text-danger registerResponse"></span>
                         </div>
                     </form>
