@@ -15,14 +15,14 @@
                                     <label for="email" class="text-dark">Correo</label>
                                     <input id="emailInicioSesion" type="email" name="email" class="form-control">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensajeEmailInicioSesion1">LLenar campo correo.</div>
-                                <div class="error alert alert-danger" role="alert" id="mensajeEmailInicioSesion2">Escriba un correo válido.</div>
+                                <div class="errorIniciarSesion alert alert-danger" role="alert" id="mensajeEmailInicioSesion1">LLenar campo correo.</div>
+                                <div class="errorIniciarSesion alert alert-danger" role="alert" id="mensajeEmailInicioSesion2">Escriba un correo válido.</div>
 
                                 <div class="form-group">
                                     <label for="passsword" class="text-dark">Contraseña</label>
                                     <input type="password" name="password" id="passwordInicioSesion" class="form-control">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensajePwIniciarSesion1">Escriba su contraseña.</div>
+                                <div class="errorIniciarSesion alert alert-danger" role="alert" id="mensajePwIniciarSesion1">Escriba su contraseña.</div>
 
                                 <!-- BOTON -->
                                 <div class="form-group text-center">

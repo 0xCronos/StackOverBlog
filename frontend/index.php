@@ -76,6 +76,7 @@ $userSession = new UserSession();
     <script src="../frontend/scripts/iniciarSesion.js"></script>
     <script src="../frontend/scripts/contacto.js"></script>
     <script src="../frontend/scripts/editNew.js"></script>
+    <script src="../frontend/scripts/crearNoticia.js"></script>
 
 </body>
 </html>
