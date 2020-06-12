@@ -15,21 +15,21 @@
                                     <label for="fullname">Nombre completo (visible para todos)</label>
                                     <input id="nombre" type="name" class="form-control" placeholder="Ingresa tu nombre completo o un alias" name="fullname">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensaje1">Llenar campo nombre</div>
+                                <div class="errorRegistro alert alert-danger" role="alert" id="mensaje1">Llenar campo nombre</div>
 
                                 <div class="form-group">
                                     <label for="email">Correo electrónico</label>
                                     <input id="email" type="email" class="form-control" placeholder="Ingresa tu correo" name="email">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensaje2">LLenar campo correo correctamente</div>
+                                <div class="errorRegistro alert alert-danger" role="alert" id="mensaje2">LLenar campo correo correctamente</div>
 
 
                                 <div class="form-group">
                                     <label for="password">Contraseña</label>
                                     <input id="password" type="password" class="form-control" placeholder="Password" name="password">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensaje3">Llenar campo contraseña</div>
-                                <div class="error alert alert-danger" role="alert" id="mensajePw">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                                <div class="errorRegistro alert alert-danger" role="alert" id="mensaje3">Llenar campo contraseña</div>
+                                <div class="errorRegistro alert alert-danger" role="alert" id="mensajePw">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
                                     NO puede tener otros símbolos.</div>
 
 
@@ -47,7 +47,7 @@
                                     <label for="description">Descripción</label>
                                     <textarea id="description" class="form-control" rows="3" placeholder="Escribe sobre ti..." name="description"></textarea>
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensaje4">Llenar campo descripcion con maximo 2048 caracteres</div>
+                                <div class="errorRegistro alert alert-danger" role="alert" id="mensaje4">Llenar campo descripcion con maximo 2048 caracteres</div>
 
 
                                 <!-- BOTON -->

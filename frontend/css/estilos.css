@@ -10,7 +10,7 @@ body{
 /******* BARRA HORIZONTAL DE SIGN-IN LOGIN *******/
 .barraSuperior{
 	box-shadow: 0 0px 5px 1px rgba(0, 0, 0, .8);
-    
+
     background: rgb(123,213,194);
     background: -moz-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%);
     background: -webkit-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%);
@@ -78,14 +78,8 @@ input[name="estrellas"] {
 }
 /* fin calificacion de noticia*/
 
-
 .seccionNoticia{
-    background: rgb(14,150,156);
-    background: -moz-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    background: linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e969c",endColorstr="#244655",GradientType=1);
-
+    background: #0E969C;
     box-shadow: 3px -1px 10px 0px rgba(51,51,51,0.34);
 }
 
@@ -149,12 +143,73 @@ input[name="estrellas"] {
     padding: 10px;
     width: 180px;
     font-size: 14px;
-    margin-top: -15px;
-    margin-right: 500px;
+    margin-top: -100px;
+    margin-left: 520px;
     padding: 10px;
     position: absolute;
-    z-index: 10;
+    z-index: 100;
 }
+
+.errorTextArea{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -195px;
+    margin-left: 880px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+}
+
+.errorEditPerfil{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -56px;
+    margin-left: 500px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+}
+
+.errorRegistro{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -57px;
+    margin-left: 501px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+}
+
+.errorCrearNoticia{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -65px;
+    margin-left: 880px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+}
+
+.errorIniciarSesion{
+    display: none;
+    padding: 10px;
+    width: 180px;
+    font-size: 14px;
+    margin-top: -56px;
+    margin-left: 493px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+}
+
 .fotoEditarPerfil{
     width:30%;
     border-radius: 2%;

@@ -21,7 +21,7 @@
                                     <label for="user_fullname">Nombre completo</label>
                                     <input id="nombreEditarPerfil" type="name" class="form-control" name="user_fullname" value="<?php echo $_SESSION['user_fullname']; ?>">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensajeNombreEditarPerfil1">Introduzca un nombre.</div>
+                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeNombreEditarPerfil1">Introduzca un nombre.</div>
 
                                 <fieldset disabled>
                                     <div class="form-group">
@@ -29,14 +29,14 @@
                                         <input type="text" id="disabledTextInput" class="form-control" value="<?php echo $_SESSION['user_email']; ?>">
                                     </div>
                                 </fieldset>
-                                <div class="error alert alert-danger" role="alert" id="mensajeEmailEditarPerfil1">LLenar campo Correo correctamente.</div>
+                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeEmailEditarPerfil1">LLenar campo Correo correctamente.</div>
 
                                 <div class="form-group">
                                     <label for="user_password">Contraseña</label>
                                     <input id="passwordEditarPerfil" type="password" class="form-control" placeholder="********" name="user_password">
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensajePasswordEditarPerfil1">LLenar campo Contraseña.</div>
-                                <div class="error alert alert-danger" role="alert" id="mensajePasswordEditarPerfil2">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajePasswordEditarPerfil1">LLenar campo Contraseña.</div>
+                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajePasswordEditarPerfil2">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
                                     NO puede tener otros símbolos.
                                 </div>
 
@@ -59,7 +59,7 @@
                                     <label for="user_description">Descripción</label>
                                     <textarea id="descriptionEditarPerfil" class="form-control" rows="5" name="user_description"><?php echo $_SESSION['user_description']; ?></textarea>
                                 </div>
-                                <div class="error alert alert-danger" role="alert" id="mensajeDescriptionEditarPerfil1">LLenar campo Descripción con menos de 2048 caracteres.</div>
+                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeDescriptionEditarPerfil1">LLenar campo Descripción con menos de 2048 caracteres.</div>
 
                                 <!-- BOTON -->
                                 <div class="form-group text-center">

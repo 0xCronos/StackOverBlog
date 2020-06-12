@@ -20,14 +20,14 @@
             <a href="index.php?pagina=perfil&id={{owner.user_id}}" class="text-white text-decoration-none pt-3"><i class="far fa-id-card fa-2x"></i></a>
 
         </div>
-        
+
         <hr class="bg-light">
         <!-- SECCION DE NOTICAS + VALORADAS, falta por completar-->
         <h4 class="text-white p-1 d-block text-center small">Noticias mejores calificadas</h4>
 
         <ul class="list-group" ng-repeat="bestRatedNew in bestRatedNews">
             <li class="list-group-item bg-transparent" ng-click="targetNew(bestRatedNew.new_id)" style="cursor: pointer;">
-                <a class="text-decoration-none text-white text-left">{{$index +1}}.- {{bestRatedNew.new_title}}</a>
+                <a class="text-decoration-none text-white text-left"><b> {{$index +1}}</b><i class="fas fa-award"  style="color: #0E969C;" ></i>   {{bestRatedNew.new_title}}</a>
             </li>
         </ul>
     </div>
