@@ -41,15 +41,13 @@ function cambiarfondo() {
         $(".barraDerecha").css("background", "-webkit-linear-gradient(to bottom, #29323c, #485563)");
         $(".barraDerecha").css("background", "linear-gradient(to bottom, #29323c, #485563)");
 
-        $(".seccionNoticia").css("background", "#2b5876");
-        $(".seccionNoticia").css("background", "-webkit-linear-gradient(to right, #4e4376, #2b5876)");
-        $(".seccionNoticia").css("background", "linear-gradient(to right, #4e4376, #2b5876)");
+        $(".seccionNoticia").css("background", "#4e4376");
 
         $(".fotoBarraDerecha").css("border" , "3px solid #4D4376");
 
         $(".noticia").css("background", "#485563");
         $(".noticia").css("background", "-webkit-linear-gradient(to right, #29323c, #485563");
-        $(".noticia").css("background", "linear-gradient(to right, #29323c, #485563)");
+        $(".noticia").css("background", "#29323c");
 
 
         $(".letraBlanca").css("color", "#EEE");
@@ -63,19 +61,15 @@ function cambiarfondo() {
         $(".barraIzquierda").css("background", "linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
         $(".barraDerecha").css("background", "linear-gradient( 109.6deg,  rgba(20,30,48,1) 11.2%, rgba(36,59,85,1) 91.1% )");
         $(".noticia").css("background", "white");
-        
+
         $(".barraSuperior").css("background", "rgb(123,213,194)");
         $(".barraSuperior").css("background", "-moz-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%)");
         $(".barraSuperior").css("background", "-webkit-linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%)");
         $(".barraSuperior").css("background", "linear-gradient(to left, rgba(123,213,194,1) 29%, rgba(14,175,181,1) 49%, rgba(123,213,194,1) 80%)");
         $(".barraSuperior").css("filter", "progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#7bd5c2\",endColorstr=\"#7bd5c2\",GradientType=1)");
 
-        $(".seccionNoticia").css("background", "rgb(14,150,156)");
-        $(".seccionNoticia").css("background", "-moz-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%)");
-        $(".seccionNoticia").css("background", "-webkit-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%)");
-        $(".seccionNoticia").css("background", "linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%)");
-        $(".seccionNoticia").css("filter", "progid:DXImageTransform.Microsoft.gradient(startColorstr=\"#0e969c\",endColorstr=\"#244655\",GradientType=1)");
-        
+        $(".seccionNoticia").css("background", "#0E969C");
+
         $(".fotoBarraDerecha").css("border" , "3px solid #0EAFB5");
 
         $(".letraBlanca").css("color", "white");

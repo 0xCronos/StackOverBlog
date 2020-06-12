@@ -78,14 +78,8 @@ input[name="estrellas"] {
 }
 /* fin calificacion de noticia*/
 
-
 .seccionNoticia{
-    background: rgb(14,150,156);
-    background: -moz-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    background: linear-gradient(90deg, rgba(14,150,156,1) 24%, rgba(36,70,85,1) 64%, rgba(36,70,85,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e969c",endColorstr="#244655",GradientType=1);
-
+    background: #0E969C;
     box-shadow: 3px -1px 10px 0px rgba(51,51,51,0.34);
 }
 
