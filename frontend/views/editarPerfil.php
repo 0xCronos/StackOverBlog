@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <img src="../backend/assets<?php echo $_SESSION['user_image']; ?>" loading="lazy" class="fotoEditarPerfil">
+                                    <img src="../backend/assets<?php echo $_SESSION['user_image']; ?>" class="fotoEditarPerfil">
                                 </div>
 
                                 <div class="form-group mt-2">

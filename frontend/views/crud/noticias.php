@@ -155,7 +155,7 @@
                         </div>
 
                         <div class="text-center">
-                            <img src="../backend/assets{{new.new_image}}" loading="lazy" class="fotoEditarNoticia">
+                            <img src="../backend/assets{{new.new_image}}" class="fotoEditarNoticia">
                         </div>
 
                         <!-- Sección de comentarios -->
