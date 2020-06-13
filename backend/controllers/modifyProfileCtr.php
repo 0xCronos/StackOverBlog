@@ -34,19 +34,42 @@ if(isset($_POST['user_id'])){
                 $user_fullname = $_POST['user_fullname'];
                 $user_fullname = filter_var($user_fullname, FILTER_SANITIZE_STRING);
             }else{
-                $validador = 0;
+                echo "El largo del nombre o alias no debe exeder los 100 caracteres";
+                exit;
             }
         }else{
             $user_fullname = $infoUser['user_fullname'];
         }
 
         //nueva $password
-        if(isset($_POST['user_password'])){
-                $user_password = $_POST['user_password'];
-                $user_password = md5($user_password);
+        if(isset($_POST['user_password']) && isset($_POST['user_confirm_password'])){
+            
+
+            //Mantiene contraseña
+            if($_POST['user_password'] == "") {
+                $user_Oldpassword = $user->getUserPasswordById($user_id);
+                $user_password = $user_Oldpassword['user_password'];
+            }else{ //cambia contraseña
+                if($_POST['user_confirm_password'] == $_POST['user_password']){
+                    $user_password = $_POST['user_password'];
+
+                    //validacion password 
+                    if(strlen($user_password) < 8 || strlen($user_password) > 126){
+                        echo "La contraseña debe tener 8 caracteres minimo y no puede superar los 126 caracteres";
+                        exit;
+                    }
+
+                    //Prepara contraseña cifrandola
+                    $user_password = md5($user_password);
+                }else{
+                    echo "Las contraseñas no coinciden";
+                    exit;
+                }
+
+            }
         }else{
-            $user_Oldpassword = $user->getUserPasswordById($user_id);
-            $user_password = $user_Oldpassword['user_password'];
+            echo "No se envió parametro contraseña";
+            exit;
         }
 
         //nueva description user
@@ -55,7 +78,8 @@ if(isset($_POST['user_id'])){
                 $user_description = $_POST['user_description'];
                 $user_description = filter_var($user_description, FILTER_SANITIZE_STRING);
             }else{
-                $validador = 0;
+                echo "El largo de la descripción no debe exeder los 2048 caracteres";
+                exit;
             }
         }else{
             $user_description = $infoUser['user_description'];
@@ -100,7 +124,7 @@ if(isset($_POST['user_id'])){
 }
 
 function validateNameUser($user_fullname){
-    if(strlen($user_fullname) < 4 || strlen($user_fullname) > 35){
+    if(strlen($user_fullname) < 4 || strlen($user_fullname) > 100){
         return false;
     }
     return true;

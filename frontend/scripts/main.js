@@ -107,17 +107,15 @@ $(".modifyNewForm").ready(function(){
 $(document).ready(function(){
 
     //AJAX INICIO DE SESION
-    $(".loginForm").submit(function (e) {
+    $("#loginForm").submit(function (e) {
         e.preventDefault();
 
-        var correo = $("input[type=email]").val();
-        var clave = $("input[type=password]").val();
 
         $.ajax({
             url: '../backend/controllers/loginCtr.php',
             method: 'POST',
             dataType: 'text',
-            data: $(".loginForm").serialize()
+            data: $("#loginForm").serialize()
         })
         .done(function (data) {
             // console.log(data);
@@ -134,9 +132,9 @@ $(document).ready(function(){
     })
 
     //REGISTRARSE
-    $(".registerForm").submit(function (e) {
+    $("#registerForm").submit(function (e) {
         e.preventDefault();
-        var form = $('.registerForm')[0];
+        var form = $('#registerForm')[0];
         var data = new FormData(form);
         $.ajax({
             url: '../backend/controllers/registerCtr.php',
@@ -158,13 +156,13 @@ $(document).ready(function(){
     })
 
     //AJAX ENVIAR CONTACTO
-    $(".contactForm").submit(function (e) {
+    $("#contactForm").submit(function (e) {
         e.preventDefault();
         $.ajax({
             url: '../backend/controllers/addContactCtr.php',
             type: 'POST',
             dataType: 'text',
-            data: $(".contactForm").serialize()
+            data: $("#contactForm").serialize()
 
         })
         .done(function (data) {

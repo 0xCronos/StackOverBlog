@@ -10,7 +10,7 @@
                     <div id="form-column" class="col-md-6">
                         <div id="form-box" class="bg-light text-dark">
 
-                            <form method="POST" class="editar_perfil" enctype="multipart/form-data">
+                            <form method="POST" id="editProfile" enctype="multipart/form-data">
                                 <h3 class="text-center text-dark mb-3"> Actualizar Perfil</h3>
 
                                 <div class="form-group">
@@ -19,25 +19,24 @@
 
                                 <div class="form-group">
                                     <label for="user_fullname">Nombre completo</label>
-                                    <input id="nombreEditarPerfil" type="name" class="form-control" name="user_fullname" value="<?php echo $_SESSION['user_fullname']; ?>">
+                                    <input type="text" class="form-control" name="user_fullname" value="<?php echo $_SESSION['user_fullname']; ?>">
                                 </div>
-                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeNombreEditarPerfil1">Introduzca un nombre.</div>
 
                                 <fieldset disabled>
                                     <div class="form-group">
                                         <label for="disabledTextInput">Correo Electrónico</label>
-                                        <input type="text" id="disabledTextInput" class="form-control" value="<?php echo $_SESSION['user_email']; ?>">
+                                        <input type="text" name="user_email" id="disabledTextInput" class="form-control" value="<?php echo $_SESSION['user_email']; ?>">
                                     </div>
                                 </fieldset>
-                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeEmailEditarPerfil1">LLenar campo Correo correctamente.</div>
 
                                 <div class="form-group">
-                                    <label for="user_password">Contraseña</label>
-                                    <input id="passwordEditarPerfil" type="password" class="form-control" placeholder="********" name="user_password">
+                                    <label for="user_password">Nueva contraseña<br><span class="small">(dejar en blanco para no cambiar)</span></label>
+                                    <input id="editPassword" type="password" class="form-control" placeholder="********" name="user_password">
                                 </div>
-                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajePasswordEditarPerfil1">LLenar campo Contraseña.</div>
-                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajePasswordEditarPerfil2">La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
-                                    NO puede tener otros símbolos.
+
+                                <div class="form-group">
+                                    <label for="user_confirm_password">Confirmar contraseña</label>
+                                    <input type="password" class="form-control" placeholder="********" name="user_confirm_password">
                                 </div>
 
                                 <!-- imagen noticia -->
@@ -57,13 +56,12 @@
 
                                 <div class="form-group mt-2">
                                     <label for="user_description">Descripción</label>
-                                    <textarea id="descriptionEditarPerfil" class="form-control" rows="5" name="user_description"><?php echo $_SESSION['user_description']; ?></textarea>
+                                    <textarea class="form-control" rows="5" name="user_description"><?php echo $_SESSION['user_description']; ?></textarea>
                                 </div>
-                                <div class="errorEditPerfil alert alert-danger" role="alert" id="mensajeDescriptionEditarPerfil1">LLenar campo Descripción con menos de 2048 caracteres.</div>
 
                                 <!-- BOTON -->
                                 <div class="form-group text-center">
-                                    <input id="editPerfilButton" type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Modificar">
+                                    <input type="submit" class="btn btn-block btn-lg btn-formulario border-dark" value="Modificar">
                                     <span class="text-danger"></span>
                                 </div>
                             </form>

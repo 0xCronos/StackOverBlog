@@ -138,76 +138,13 @@ input[name="estrellas"] {
     border: 3px solid #0EAFB5;
 }
 
-.error{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -100px;
-    margin-left: 520px;
-    padding: 10px;
-    position: absolute;
+label.error{
+    width: 100%;
+    margin-top: 10px;
     z-index: 100;
-}
-
-.errorTextArea{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -195px;
-    margin-left: 880px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
-}
-
-.errorEditPerfil{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -56px;
-    margin-left: 500px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
-}
-
-.errorRegistro{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -57px;
-    margin-left: 501px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
-}
-
-.errorCrearNoticia{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -65px;
-    margin-left: 880px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
-}
-
-.errorIniciarSesion{
-    display: none;
-    padding: 10px;
-    width: 180px;
-    font-size: 14px;
-    margin-top: -56px;
-    margin-left: 493px;
-    padding: 10px;
-    position: absolute;
-    z-index: 100;
+    text-align: center;
+    color: red;
+    transition: 0.5s;
 }
 
 .fotoEditarPerfil{
