@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2020 at 09:08 PM
+-- Generation Time: Jun 13, 2020 at 05:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -37,8 +37,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`category_id`, `category_name`) VALUES
+(36, 'Ciberseguridad'),
 (1, 'Conspiración'),
 (29, 'Pandemia'),
+(32, 'Redes'),
 (26, 'Tecnologia'),
 (31, 'Videojuegos');
 
@@ -81,7 +83,7 @@ INSERT INTO `comments` (`comment_id`, `comment_timestamp`, `comment_text`, `user
 
 CREATE TABLE `contacts` (
   `contact_id` int(11) NOT NULL,
-  `contact_fullname` varchar(128) NOT NULL,
+  `contact_fullname` varchar(120) NOT NULL,
   `contact_email` varchar(255) NOT NULL,
   `contact_text` varchar(2048) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,7 +93,8 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`contact_id`, `contact_fullname`, `contact_email`, `contact_text`) VALUES
-(30, 'Patricio estrella', 'patoestrella@gmail.com', 'Hola muy lindo el blog');
+(30, 'Patricio estrella', 'patoestrella@gmail.com', 'Hola muy lindo el blog'),
+(34, 'Ricardo Muñoz', 'diefranrv@hotmail.com', 'Muy buen trabajo.');
 
 -- --------------------------------------------------------
 
@@ -122,7 +125,9 @@ INSERT INTO `news` (`new_id`, `new_timestamp`, `new_title`, `new_body`, `new_ima
 (92, '2020-06-10 01:57:31', 'Chuwi AeroBook Pro: pequeño pero resultón', 'Siempre me ha llamado la atención el segmento de mercado de los portátiles económicos y, sin duda, el Chuwi AeroBook Pro es un ejemplo perfecto. Claro que, en realidad, podríamos afirmar lo mismo de todos los ordenadores portátiles de este fabricante. Y aún más, si estableceemos una comparación entre todos ellos, este modelo en particular se situaría entre las posiciones más elevadas de la tabla.\r\n\r\nSea como fuere, este fabricante chino acaba de anunciar la llegada, el próximo de 18 de junio, del Chuwi AeroBook Pro, un dispositivo que, como ya viene siendo habitual en este fabricante,será comercializado a través de su tienda oficial en Aliexpress. El precio a fecha de salida, salvo cambios de última hora, será de 499 dólares, unos 493 euros.', '/news-images/ePv0GJl8TzwjqxrQ53bAsdpIyhVSLUDR.jpg', 1, 26, 1),
 (93, '2020-06-10 01:57:54', 'Apple abandonará Intel y anunciará sus propios procesadores ARM en la WWDC20', 'No es ningún secreto que Apple lleva mucho tiempo preparando sus primeros Mac con procesadores de diseño propio y arquitectura ARM. Hace unas horas, la prestigiosa Bloomberg ha filtrado que harán en gran anuncio durante la conferencia de desarrolladores, dentro de un par de semanas.\r\n\r\nLa información proporcionada por la fuente habla únicamente de «anuncio» así que es probable que Apple enseñe su roadmap junto con el plan de transición y, de paso, de tiempo suficiente al ecosistema de desarrolladores para preparar el software. Cómo ocurrió hace años con el salto de PowerPC a Intel, será necesario un tiempo donde puedan convivir las dos plataformas. Sería toda una sorpresa ver hardware con ARM tan pronto y, como sabemos, no es habitual que Apple tire de prototipos o producto no final.', '/news-images/6R1akrIL8TjZipPSqgUsh5Q7e3YXmKWB.jpg', 1, 26, 1),
 (94, '2020-06-10 10:31:00', 'Microsoft amplía el despliegue de Windows 10 2004', 'El despliegue de Windows 10 2004 se está produciendo de una manera gradual y no llegará (de manera oficial) a todos los usuarios en semanas o meses desde el lanzamiento. Microsoft ha dejado a un lado la estrategia agresiva de actualizaciones anteriores y ahora los lanzamientos se producen de forma progresiva. Los motivos del cambio son conocidos: intentar limitar los errores del sistema.\r\n\r\nLa compañía ha actualizado la página del estado de lanzamiento del sistema añadiendo una novedad, la posibilidad de instalar el sistema desde Windows Update. Pero todavía no automáticamente, sino para usuarios de las versiones 1903 y 1909, que busquen activamente utilizando la opción «Buscar actualizaciones».', '/news-images/oLQdr2jCmbfVzv1xgGuJH4FPZ8kDXayq.jpg', 3, 1, 1),
-(96, '2020-06-10 13:42:00', 'Transporte público y coronavirus: Google Maps te informará al respecto', 'Durante toda la pandemia, y especialmente desde el principio del fin del confinamiento y la entrada en las fases de desescalada, se han disparado las dudas en relación entre transporte público y coronavirus. ¿Qué servicios están disponibles? ¿Qué ocurre con los servicios de transporte entre provincias? ¿Y entre comunidades? ¿Hay espacios de transporte público que estén temporalmente cerrados a consecuencia de la pandemia? ¿Y si en mi provincia hay zonas en fases distintas? ¿Y con el coche? Es complicado, bastante complicado.\r\n\r\nCon el fin de facilitar las cosas, Google Maps va a empezar a mostrar información sobre avisos y alertas relacionados con los desplazamientos. La primera fase del despliegue de estas funciones, según informa hoy TechCrunch llegará, se supone que de manera inminente, a Argentina, Australia, Bélgica, Brasil, Colombia, Francia, India, México, Países Bajos, España, Tailandia, Reino Unido y EE.UU. La elección de los países se debe a que la empresa del buscador ya dispone de los canales de comunicación adecuados con las autoridades que recopilan y facilitan dicha información.\r\n\r\nAl ver las funciones incorporadas en los mapas que relacionan transporte público y coronavirus, podemos ver los diferentes modos de proceder que se han establecido en distintos países. Así, por ejemplo, la app podrá informar sobre obligatoriedad o no de llevar mascarilla en determinados espacios, dónde se han ubicado puntos de control para realizar chequeos a los ciudadanos, o información relacionada con los desplazamientos que tengan, como destino, centros de salud y hospitales.', '/news-images/Q4IqklXWzTV3BfioOsP5DmeKNrHAFSxZ.jpg', 1, 29, 1);
+(96, '2020-06-10 13:42:00', 'Transporte público y coronavirus: Google Maps te informará al respecto', 'Durante toda la pandemia, y especialmente desde el principio del fin del confinamiento y la entrada en las fases de desescalada, se han disparado las dudas en relación entre transporte público y coronavirus. ¿Qué servicios están disponibles? ¿Qué ocurre con los servicios de transporte entre provincias? ¿Y entre comunidades? ¿Hay espacios de transporte público que estén temporalmente cerrados a consecuencia de la pandemia? ¿Y si en mi provincia hay zonas en fases distintas? ¿Y con el coche? Es complicado, bastante complicado.\r\n\r\nCon el fin de facilitar las cosas, Google Maps va a empezar a mostrar información sobre avisos y alertas relacionados con los desplazamientos. La primera fase del despliegue de estas funciones, según informa hoy TechCrunch llegará, se supone que de manera inminente, a Argentina, Australia, Bélgica, Brasil, Colombia, Francia, India, México, Países Bajos, España, Tailandia, Reino Unido y EE.UU. La elección de los países se debe a que la empresa del buscador ya dispone de los canales de comunicación adecuados con las autoridades que recopilan y facilitan dicha información.\r\n\r\nAl ver las funciones incorporadas en los mapas que relacionan transporte público y coronavirus, podemos ver los diferentes modos de proceder que se han establecido en distintos países. Así, por ejemplo, la app podrá informar sobre obligatoriedad o no de llevar mascarilla en determinados espacios, dónde se han ubicado puntos de control para realizar chequeos a los ciudadanos, o información relacionada con los desplazamientos que tengan, como destino, centros de salud y hospitales.', '/news-images/Q4IqklXWzTV3BfioOsP5DmeKNrHAFSxZ.jpg', 1, 29, 1),
+(105, '2020-06-13 03:49:27', 'Nuestros lectores hablan: el diseño de PS5 ya es definitivo, ¿te ha gustado?', 'Ayer descubrimos, por fin, el diseño de PS5, la consola de nueva generación Sony, y lo cierto es que, como suele ocurrir siempre con estas cosas, surgieron opiniones enfrentadas. Curiosamente la mayoría de esas opiniones se sitúan en dos extremos, es decir, o te gusta o la odias, solo una minoría se decantó una valoración intermedia.\r\n\r\nYa lo hemos comentado en otras ocasiones, pero es un buen momento para volver a profundizar sobre ello. El diseño de PS5 era una cuestión muy complicada por tres grandes razones:\r\n\r\nEstética: Sony no quería seguir los pasos de Microsoft con Xbox Series X, es decir, buscaba alejar el diseño de PS5 del estilo tipo chasis de PC compacto que utilizó el gigante de Redmond. Esto suponía un desafío importante por las dos razones que vamos a ver a continuación.\r\nDistribución de componentes: para integrar todos los componentes de la consola necesitas un chasis con un diseño eficiente, y esto puede complicar mucho el diseño final del mismo.\r\nCalor y refrigeración: es un tema fundamental. Estoy seguro de que muchos recordaréis los problemas que han tenido diferentes generaciones de consolas con el exceso de calor, y PS4 no fue una excepción. El chasis debe ser estético, permitir una buena distribución de componentes y dejar espacio para crear un buen flujo de aire y para conseguir una buena refrigeración del sistema.\r\nCumplir esos tres objetivos era muy difícil, pero en teoría Sony lo ha conseguido, y lo ha hecho con un diseño verdaderamente sorprendente. La compañía japonesa no ha explicado todavía al detalle el sistema de refrigeración de PS5, pero por lo que he podido ver en las primeras imágenes tenemos unas entradas de aire enormes el frontal que deberían facilitar un buen flujo de aire. Sin ver la parte trasera no puedo deciros nada más, por desgracia.', '/news-images/QmVKZnxo7jJCG98UWIi13NRzAPtglLbM.jpg', 1, 31, 1),
+(106, '2020-06-13 03:51:33', 'Microsoft Releases June 2020 Security Patches For 129 Vulnerabilities', 'Como acostumbra a hacer el segundo martes de cada mes, Microsoft ha lanzado el clásico &#34;Patch Tuesday&#34;, su actualización acumulativa de seguridad para Windows 10 (aunque también llega a otros sistemas operativos anteriores, incluido Windows 7 con soporte añadido).\r\n\r\nLo que cambia esta vez es que Microsoft ha parcheado 129 vulnerabilidades, teniendo 11 de ellas la categoría de críticas. Estos números conforman lo que ya es el mayor actualización de seguridad de Microsoft en un solo mes. Recientemente, eso sí, ha habido actualizaciones con más vulnerabilidades críticas, como el de mayo, que llegó con 16 de estas. En marzo, por ejemplo, fueron 26.\r\n\r\nEs relevante señalar que Microsoft lleva cuatro meses consecutivos solucionando más de 110 vulnerabilidades.', '/news-images/3mVMQu0ZLfhF2sIDczGSx9TUnJYBlWKo.jpg', 1, 36, 1);
 
 -- --------------------------------------------------------
 
@@ -191,15 +196,9 @@ INSERT INTO `ratings` (`rating_id`, `rating_value`, `new_id`, `ip_address`) VALU
 (45, 3, 93, '190.42.31.1'),
 (46, 2, 93, '190.42.31.1'),
 (47, 3, 93, '190.42.41.2'),
-(48, 5, 93, '::1'),
-(49, 5, 92, '::1'),
-(50, 5, 91, '::1'),
-(51, 5, 90, '::1'),
-(52, 5, 89, '::1'),
-(53, 5, 94, '::1'),
-(54, 5, 84, '::1'),
-(55, 5, 96, '::1'),
-(56, 5, 96, '192.168.0.5');
+(56, 5, 96, '192.168.0.5'),
+(57, 5, 96, '192.168.0.8'),
+(58, 5, 106, '::1');
 
 -- --------------------------------------------------------
 
@@ -228,7 +227,7 @@ INSERT INTO `roles` (`role_id`, `role_name`) VALUES
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_fullname` varchar(128) DEFAULT NULL,
+  `user_fullname` varchar(120) DEFAULT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_password` varchar(126) DEFAULT NULL,
   `user_image` varchar(120) DEFAULT NULL,
@@ -242,12 +241,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_fullname`, `user_email`, `user_password`, `user_image`, `user_description`, `user_timestamp`, `role_id`) VALUES
-(1, 'Thomas A. Anderson', 'neo@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '/profiles-images/426011af65ccbd525d5c741d0cbf4296.jpg', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenea', '2020-05-20 05:33:02', 1),
+(1, 'Thomas A. Anderson', 'neo@gmail.com', 'c06db68e819be6ec3d26c6038d8e8d1f', '/profiles-images/426011af65ccbd525d5c741d0cbf4296.jpg', 'Este blog fue creado con la finalidad de publicar noticias actuales respecto a la informatica y el desarrollo de la tecnología, además de generar comentarios y debatir ideas entre los usuarios de esta comunidad, con el objetivo de compartir el conocimiento entre los usuarios y ayudar a nuestra comunidad a mejorar como profesionales dentro del mundo de la programación.\r\n\r\nUn punto fuerte de nuestra pagina, es la calificacion de las noticias, en donde en la barra del usuario podran ver las 5 mejores calificadas con sus links respectivos.\r\n\r\nOtro punto fuerte es que tiene una buena division de las categorias, las cuales te ayudaran a navegar a traves de la pagina de una buena forma.', '2020-05-20 05:33:02', 1),
 (31, 'Duckman', 'duckman@gmail.com', '820466a89565d6288970a0a2d763c223', '/profiles-images/59ec6500d3933f3d32072b5992afcb68.jpg', 'Hola, soy un pato!', '2020-06-10 10:33:07', 2),
 (37, 'Doge Muñoz', 'diego@gmail.com', '126cfbcd4d16ae6d25c9bfcae76d8ee4', '/profiles-images/a9c033f9b68a989437c64ca2bd228c5e.jpg', 'Omae wa mou shindeiru!', '2020-06-10 18:49:04', 2),
 (38, 'Patricio Estrella', 'patricioestrella@gmail.com', '126cfbcd4d16ae6d25c9bfcae76d8ee4', '/profiles-images/f472fc19dcec51778358057e309abadb.jpg', 'Es decir que se han apoderado de lo que queríamos creer y nos hacen creer que creíamos que los pensamientos que hemos tenido son pensamientos que creemos que creíamos...', '2020-06-10 18:53:57', 2),
 (39, 'Laslo Gutierrez', 'lazlo666@gmail.ccom', '126cfbcd4d16ae6d25c9bfcae76d8ee4', '/profiles-images/05702420689560dd31b6d143352e81fb.jpg', 'Wena los cabros soy el laslo :3', '2020-06-10 18:56:30', 2),
-(40, 'Ankordururu', 'ankordururu@gmail.com', '126cfbcd4d16ae6d25c9bfcae76d8ee4', '/profiles-images/96a69b686d84440d9e13500307050ea1.jpg', 'Soy un michi michi miau miau', '2020-06-10 19:06:25', 2);
+(40, 'Ankordururu', 'ankordururu@gmail.com', '126cfbcd4d16ae6d25c9bfcae76d8ee4', '/profiles-images/96a69b686d84440d9e13500307050ea1.jpg', 'Soy un michi michi miau miau', '2020-06-10 19:06:25', 2),
+(41, 'Ricardo Muñoz', 'diefranrv@hotmail.com', 'f68fc7582ece5493c5986d6a91a63755', '/profiles-images/19b0c65fcf99250f7dd0c5393c67e139.jpeg', 'Holaaa', '2020-06-11 14:22:45', 2);
 
 --
 -- Indexes for dumped tables
@@ -319,7 +319,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `comments`
@@ -331,13 +331,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `new_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `news_states`
@@ -349,7 +349,7 @@ ALTER TABLE `news_states`
 -- AUTO_INCREMENT for table `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -361,7 +361,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Constraints for dumped tables
