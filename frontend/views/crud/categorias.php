@@ -23,7 +23,7 @@
         </table>
     </div>
     <div class="container text-center mt-3">
-        <form class="categoryForm" action="POST">
+        <form id="categoryForm" action="POST">
             <input class="categoryNameInput" name="category_name" type="text">
             <input class="btn btn-formulario" value="Agregar nueva categoría" type="submit">
         </form>

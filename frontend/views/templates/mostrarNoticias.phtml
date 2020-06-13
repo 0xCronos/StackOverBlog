@@ -1,12 +1,12 @@
 <section>
     <header class="seccionNoticia text-white text-center">
-        <a class="text-decoration-none migaDePan" href="index.php?pagina=inicio" ng-hide="targetingNew != 1">Inicio</a>
+    <a class="text-decoration-none migaDePan" href="index.php?pagina=inicio" ng-hide="targetingNew != 1">Inicio</a>
         <span class="text-white" ng-hide="targetingNew != 1"> / </span>
         {{section}}
     </header>
     <!-- Noticias -->
     <article class="noticia p-5 mb-5" ng-repeat="new in news | filter:buscarNoticia">
-        <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-long-arrow-alt-left fa-lg text-dark"></i></a>
+        <a href="index.php?pagina=inicio" ng-click="loadNews()" ng-hide="targetingNew == false"><i class="fas fa-arrow-alt-circle-left fa-lg text-dark"></i></a>
 
         <h1 class="text-center letraNoticia" ng-click="targetNew(new.new_id)" style="cursor: pointer;">{{new.new_title}}</h1>
         <hr class="px-5">
@@ -56,7 +56,7 @@
                 <div class="container mt-3 d-none" ng-repeat="comment in new.comments">
                     
                     <a href="index.php?pagina=perfil&id={{comment.user_id}}" class="font-weight-bold letraNegra span">
-                        <img class="rounded-circle mb-1" loading="lazy" src="../backend/assets{{comment.user_image}}" width="32px" height="32px">
+                        <img class="rounded-circle mb-1" src="../backend/assets{{comment.user_image}}" width="32px" height="32px">
                         {{comment.user_fullname}}
                     </a>
                     

@@ -49,7 +49,7 @@ $userSession = new UserSession();
 
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -71,12 +71,8 @@ $userSession = new UserSession();
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/e632f1f723.js" crossorigin="anonymous"></script>
 
-    <script src="../frontend/scripts/register.js"></script>
-    <script src="../frontend/scripts/editarPerfil.js"></script>
-    <script src="../frontend/scripts/iniciarSesion.js"></script>
-    <script src="../frontend/scripts/contacto.js"></script>
-    <script src="../frontend/scripts/editNew.js"></script>
-    <script src="../frontend/scripts/crearNoticia.js"></script>
+    <!-- jquery validate -->
+    <script src="scripts/validaciones.js"></script>
 
 </body>
 </html>

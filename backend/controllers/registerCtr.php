@@ -5,11 +5,12 @@ require_once "../models/user.php";
 
 $user = new User();
 
-if(isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['description'])){
+if(isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['description'])){
    
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
     $description = $_POST['description'];
 
     //Sanitiza inputs
@@ -20,6 +21,11 @@ if(isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['password
     //Comprueba email
     if($user->checkEmail($email)){
         echo "El correo electrónico ingresado está en uso";
+        exit;
+    }
+
+    if($password != $confirm_password){
+        echo "Las contraseñas no coinciden";
         exit;
     }
 
@@ -59,7 +65,7 @@ if(isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['password
 }
 
 function validateRegisterInput($fullname, $email, $password, $description){
-    if(strlen($fullname) < 4 || strlen($fullname) > 35){
+    if(strlen($fullname) < 4 || strlen($fullname) > 100){
         return "Campo nombre no cumple con los requisitos.";
     }
     if(strlen($email) < 5 || strlen($email) > 255){

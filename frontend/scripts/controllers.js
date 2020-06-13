@@ -169,10 +169,9 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
     $scope.categorias = [];
 
     $http.get("../backend/controllers/getCategoriesCtr.php")
-        .then(function (response) {
-            $scope.categorias = response.data;
-        })
-
+    .then(function (response) {
+        $scope.categorias = response.data;
+    })
 
     $scope.eliminarComentario = function (id) {
         $.ajax({
@@ -181,13 +180,12 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
             dataType: 'text',
             data: "comment_id=" + id
         })
-            .done(function (data) {
-                if (data == 1) {
-                    alert("Comentario borrado");
-                    window.location.reload();
-                }
-            })
-
+        .done(function (data) {
+            if (data == 1) {
+                alert("Comentario borrado");
+                window.location.reload();
+            }
+        })
     }
 
     $scope.loadAllNews = function () {
@@ -195,9 +193,9 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
             .then(function (response) {
                 $scope.news = response.data;
             }
-                , function (error) {
-                    console.warn(error);
-                })
+            , function (error) {
+                console.warn(error);
+            })
     }
 
     //AJAX ELIMINAR NOTICIA
@@ -209,9 +207,9 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
             dataType: 'text',
             data: $(elemento).serialize()
         })
-            .done(function (data) {
-                window.location.reload();
-            })
+        .done(function (data) {
+            window.location.reload();
+        })
     }
 
     //AJAX CREAR NOTICIA
@@ -228,16 +226,15 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
                 contentType: false,
                 data: data
             })
-                .done(function (data) {
-                    console.log(data);
-                    if (data == "1") {
-                        alert("noticia agregada con exito");
-                        window.location.reload();
-                    } else {
-                        alert("No se pudo crear la noticia");
-                        //$("#respuesta").html("Nombre de usuario y/o contraseña incorrecto");
-                    }
-                })
+            .done(function (data) {
+                console.log(data);
+                if (data == "1") {
+                    alert("noticia agregada con exito");
+                    window.location.reload();
+                } else {
+                    alert("No se pudo crear la noticia, quizás no elegiste una categoría...");
+                }
+            })
         })
     });
 
@@ -257,14 +254,14 @@ app.controller('controladorCrudNoticias', function ($scope, $http) {
             contentType: false,
             data: dataTransformado
         })
-            .done(function (data) {
-                if (data != "1") {
-                    alert(data);
-                } else {
-                    alert(data);
-                    window.location.reload();
-                }
-            })
+        .done(function (data) {
+            if (data == "1") {
+                alert("Noticia modificada con exito!");
+                window.location.reload();
+            } else {
+                alert(data);
+            }
+        })
         // .fail(function(error){
         //     console.warn(error);
         // });
@@ -285,9 +282,9 @@ app.controller('controladorCrudCategorias', function ($scope, $http) {
             dataType: 'text',
             data: "category_id=" + id + "&category_name=" + nombre
         })
-            .done(function (data) {
-                window.location.reload();
-            })
+        .done(function (data) {
+            window.location.reload();
+        })
     }
 
     $scope.deleteCategory = function (id) {
@@ -298,39 +295,39 @@ app.controller('controladorCrudCategorias', function ($scope, $http) {
             dataType: 'text',
             data: $(elemento).serialize()
         })
-            .done(function (data) {
-                if (data == "1") {
-                    window.location.reload();
-                } else {
-                    alert("Primero borra las noticias de esta categoría");
-                }
+        .done(function (data) {
+            if (data == "1") {
+                window.location.reload();
+            } else {
+                alert("Primero borra las noticias de esta categoría");
+            }
 
-            })
+        })
     }
 
     $scope.getCategories = function () {
         $http.get("../backend/controllers/getCategoriesCtr.php")
-            .then(function (response) {
-                $scope.categories = response.data;
-            })
+        .then(function (response) {
+            $scope.categories = response.data;
+        })
     }
 
     $(document).ready(function () {
-        $(".categoryForm").submit(function (e) {
+        $("#categoryForm").submit(function (e) {
             e.preventDefault();
             $.ajax({
                 url: '../backend/controllers/addCategoryCtr.php',
                 type: 'POST',
                 dataType: 'text',
-                data: $(".categoryNameInput").serialize()
+                data: $("#categoryForm").serialize()
             })
-                .done(function (data) {
-                    if (data == "1") {
-                        window.location.reload();
-                    } else {
-                        alert("ya existe una categoria con este nombre");
-                    }
-                })
+            .done(function (data) {
+                if (data == "1") {
+                    window.location.reload();
+                } else {
+                    alert("ya existe una categoria con este nombre");
+                }
+            })
         })
     })
     $scope.getCategories();
@@ -355,9 +352,9 @@ app.controller('controladorCrudContactos', function ($scope, $http) {
                 dataType: 'text',
                 data: 'contact_id=' + id
             })
-                .done(function (data) {
-                    window.location.reload();
-                })
+            .done(function (data) {
+                window.location.reload();
+            })
         }
     })
 })
@@ -371,9 +368,9 @@ app.controller('controladorBarraDerecha', function ($scope, $http) {
             .then(function (response) {
                 $scope.owner = response.data;
             }
-                , function (error) {
-                    console.warn(error);
-                })
+            , function (error) {
+                console.warn(error);
+            })
     }
 
     $scope.loadBestRatedNews = function () {
@@ -381,9 +378,9 @@ app.controller('controladorBarraDerecha', function ($scope, $http) {
             .then(function (response) {
                 $scope.bestRatedNews = response.data;
             }
-                , function (error) {
-                    console.warn(error);
-                })
+            , function (error) {
+                console.warn(error);
+            })
     }
 
     $scope.loadOwner();
@@ -398,9 +395,9 @@ app.controller('controladorPerfil', function ($scope, $http) {
             .then(function (response) {
                 $scope.userData = response.data;
             }
-                , function (error) {
-                    console.warn(error);
-                })
+            , function (error) {
+                console.warn(error);
+            })
     }
 
 
@@ -408,9 +405,9 @@ app.controller('controladorPerfil', function ($scope, $http) {
 
 app.controller("modificarPerfil", function ($scope, $http) {
 
-    $("form.editar_perfil").submit(function () {
+    $("#editProfile").submit(function () {
 
-        var formEspecifico = $(".editar_perfil")[0];
+        var formEspecifico = $("#editProfile")[0];
         // console.log($(".editar_perfil")[0]);
         var form = $(formEspecifico)[0];
         var dataTransformado = new FormData(form);
@@ -423,14 +420,14 @@ app.controller("modificarPerfil", function ($scope, $http) {
             contentType: false,
             data: dataTransformado
         })
-            .done(function (data) {
-                if (data != "1") {
-                    alert(data);
-                } else {
-                    alert("Cambios realizados, inicia sesión nuevamente para ver todos los cambios.");
-                    window.location.assign("../backend/controllers/logout.php");
-                }
+        .done(function (data) {
+            if (data != "1") {
+                alert(data);
+            } else {
+                alert("Cambios realizados, inicia sesión nuevamente para ver todos los cambios.");
+                window.location.assign("../backend/controllers/logout.php");
+            }
 
-            })
+        })
     })
 })

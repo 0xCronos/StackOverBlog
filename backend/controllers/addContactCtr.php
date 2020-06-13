@@ -12,7 +12,7 @@ if(isset($_POST['contact_fullname']) && isset($_POST['contact_email']) && isset(
     $contact_text = filter_var($_POST['contact_text'], FILTER_SANITIZE_STRING);
 
     if(strlen($contact_fullname) > 0 && strlen($contact_email) > 0 && strlen($contact_text) > 0){
-        if(strlen($contact_fullname) <= 128 && strlen($contact_email) <= 255 && strlen($contact_text) <= 2048){
+        if(strlen($contact_fullname) <= 120 && strlen($contact_email) <= 255 && strlen($contact_text) <= 2048){
             if($contact->addContact($contact_fullname, $contact_email, $contact_text)){
                 echo "1";
             }else{

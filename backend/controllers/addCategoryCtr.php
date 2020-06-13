@@ -19,7 +19,7 @@ if($userSession->checkUserPrivileges()){
                 echo "ya existe una categoria con este nombre";
             }
         }else{
-            echo "Error: El parametro debe tener entre 1 y 35 caracteres";
+            echo "La categoría debe tener entre 1 y 35 caracteres";
         }
     }else{
         echo "Error: Parametros insuficientes";
