@@ -15,6 +15,6 @@ Technologies involved:
 - AngularJS Framework 
 - Jquery
 - PHP
-- mysql
+- MySql
 
 This project is open source which means that you can feel free to clone or fork the repository and make your own custom blog.
